@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../../dist/assets/images/logo.svg" type="image/x-icon" />
+    <title>Pilldox Client| Account</title>
+    <link rel="stylesheet" href="../../dist/style.css" />
+</head>
+
+<body>
+    <!-- navbar -->
+    <header class=" border-b border-black/10">
+        <nav class="py-5 w-full flex items-center justify-between container mx-auto">
+            <!-- logo -->
+            <div>
+                <a href="../index.html" class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="48" viewBox="0 0 51 48" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M25.394 16.3611L32.2544 12.4005C33.6571 11.5903 34.1425 9.77961 33.3316 8.37627C32.5218 6.97328 30.7114 6.48818 29.3084 7.2984L22.8436 11.0309L4.41683 0.392493C3.01315 -0.41772 1.20247 0.0673744 0.392597 1.47071C-0.41796 2.8737 0.0671392 4.68438 1.47082 5.4946L20.2922 16.3614L22.8426 17.8339L25.394 16.3614V16.3611ZM22.8436 2.19319C24.4702 2.19319 25.7893 3.51259 25.7893 5.13955C25.7893 6.76651 24.4702 8.08487 22.8436 8.08487C21.217 8.08487 19.8979 6.76617 19.8979 5.13955C19.8979 3.51293 21.2163 2.19319 22.8436 2.19319Z"
+                            fill="#FF4040" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M37.8602 28.1984C37.0469 29.6072 35.2462 30.0892 33.837 29.2759C32.4279 28.4626 31.9455 26.6616 32.7588 25.2527C33.5718 23.8435 35.3739 23.3612 36.7827 24.1745C38.1919 24.9878 38.6742 26.7896 37.8602 28.1987M24.3157 23.3237V31.2445C24.3157 32.865 25.642 34.1902 27.2614 34.1902C28.8808 34.1902 30.2071 32.865 30.2071 31.2445V23.7799L48.6338 13.1412C50.0375 12.331 50.5219 10.5203 49.7121 9.11694C48.9015 7.7136 47.0908 7.22885 45.6878 8.03906L26.8665 18.9052L24.3151 20.378V23.3234L24.3157 23.3237Z"
+                            fill="#F8BF2C" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.82562 28.1995C7.01231 26.7903 7.49466 24.9885 8.90384 24.1742C10.3127 23.3612 12.1148 23.8439 12.9277 25.2535C13.741 26.6616 13.2587 28.4633 11.8495 29.2767C10.4407 30.09 8.63859 29.6073 7.82562 28.1991M18.8194 18.9056L11.9589 14.945C10.5563 14.1351 8.74558 14.6202 7.93571 16.0232C7.12585 17.4266 7.61094 19.2369 9.01394 20.0468L15.4788 23.7796V45.0567C15.4788 46.6771 16.804 48.0024 18.4244 48.0024C20.0449 48.0024 21.3701 46.6771 21.3701 45.0567V20.3781L18.8187 18.9052L18.8194 18.9056Z"
+                            fill="#008080" />
+                    </svg>
+                    <p class="font-boldFont">Connect</p>
+                </a>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="flex items-center gap-6">
+                <a href="community-join.html"
+                    class="font-boldFont text-[#141414] w-32  flex items-center justify-center">
+                    Inbox
+                </a>
+
+                <!-- dropdown -->
+                <button
+                    class="px-8 py-3 border border-[#E6EBEF] text-[#222222] rounded-lg font-mediumFont navbar-dropdown-btn relative ">
+                    <div class="flex items-center gap-2">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M6.79199 5.62435C6.79199 3.85523 8.23121 2.41602 10.0003 2.41602C11.769 2.41602 13.2079 3.85444 13.2087 5.6229C13.2011 7.35868 11.8508 8.75681 10.129 8.82431C10.0423 8.81582 9.95671 8.81672 9.87889 8.82285C8.11768 8.73861 6.79199 7.34126 6.79199 5.62435Z"
+                                    stroke="#222222" stroke-width="1.5" />
+                                <path
+                                    d="M6.18422 16.5354L6.18217 16.534C5.28374 15.9351 4.88281 15.1957 4.88281 14.4831C4.88281 13.7699 5.28435 13.0225 6.19006 12.4157C7.21325 11.7391 8.59388 11.3789 10.0099 11.3789C11.4269 11.3789 12.8029 11.7395 13.8168 12.4154C14.7097 13.0107 15.1092 13.7496 15.1161 14.4694C15.115 15.1901 14.7132 15.9291 13.814 16.5359C12.7961 17.2191 11.4169 17.5831 9.99948 17.5831C8.58173 17.5831 7.20222 17.2189 6.18422 16.5354Z"
+                                    stroke="#222222" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p>Hi, Istiak</p>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+                                fill="none">
+                                <path
+                                    d="M9.96004 4.47461L6.70004 7.73461C6.31504 8.11961 5.68504 8.11961 5.30004 7.73461L2.04004 4.47461"
+                                    stroke="#222222" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- dropdown -->
+                    <div
+                        class="absolute w-full navbar-dropdown left-0 bg-white rounded-md px-8 py-2 shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)] translate-y-7 opacity-0 -z-10 transition-all duration-500 mt-5">
+                        <div>
+                            <a href="#" class="py-4 border-b border-[#14141414] block">Account</a>
+                            <a href="#" class="py-4 block">Log Out</a>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- body -->
+    <main class="h-[calc(100vh-90px)] container mx-auto py-40 px-24">
+
+        <!-- title -->
+        <div class="mt-20 font-poppins">
+            <h2 class="font-boldFont text-4xl text-[#222222]">Account</h2>
+            <p class="mt-4"><span class="font-boldFont text-[#222222]">Istiak Mahmud Kawser</span>,
+                khankawser123@gmail.com · <a href="" class="underline">Go to profile</a></p>
+        </div>
+
+        <!-- cards -->
+        <div class="flex items-center gap-10">
+            <div class=" rounded-lg shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)] flex-1">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path
+                            d="M29 5.00001C29.5054 4.99858 29.9927 5.18859 30.3637 5.5318C30.7348 5.87502 30.9621 6.34599 31 6.85001V25C31.0014 25.5054 30.8114 25.9927 30.4682 26.3637C30.125 26.7348 29.654 26.9621 29.15 27H3.00001C2.49457 27.0014 2.00734 26.8114 1.63629 26.4682C1.26525 26.125 1.03791 25.654 1.00001 25.15V7.00001C0.998585 6.49457 1.18859 6.00734 1.5318 5.63629C1.87502 5.26525 2.34599 5.03791 2.85001 5.00001H3.00001H29ZM29 7.00001H3.00001V25H29V7.00001ZM26 19V21H18V19H26ZM10 11C10.5443 10.9986 11.0787 11.1453 11.5459 11.4243C12.0132 11.7034 12.3958 12.1043 12.6527 12.5841C12.9095 13.064 13.031 13.6046 13.0041 14.1482C12.9773 14.6918 12.803 15.2179 12.5 15.67C13.2601 16.1088 13.8913 16.74 14.3301 17.5001C14.7689 18.2602 15 19.1223 15 20H13C13.0003 19.3794 12.8082 18.7739 12.45 18.267C12.0918 17.7602 11.5852 17.3769 11 17.17V14C11.0159 13.7348 10.9258 13.4741 10.7495 13.2753C10.5733 13.0765 10.3252 12.9559 10.06 12.94C9.79479 12.9241 9.53412 13.0142 9.33533 13.1905C9.13654 13.3668 9.01592 13.6148 9.00001 13.88V17.17C8.41485 17.3769 7.90827 17.7602 7.55006 18.267C7.19186 18.7739 6.99968 19.3794 7.00001 20H5.00001C5.00003 19.1223 5.23107 18.2602 5.66991 17.5001C6.10875 16.74 6.73993 16.1088 7.50001 15.67C7.19703 15.2179 7.02277 14.6918 6.99587 14.1482C6.96898 13.6046 7.09048 13.064 7.34735 12.5841C7.60422 12.1043 7.98679 11.7034 8.45407 11.4243C8.92135 11.1453 9.45575 10.9986 10 11ZM26 15V17H18V15H26ZM26 11V13H18V11H26Z"
+                            fill="#222222" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h3 class="font-poppins font-semibold pb-4">Personal info</h3>
+                    <p>Provide personal details and how we can reach you</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Scripts -->
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
