@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../../dist/assets/images/logo.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="../dist/assets/images/logo.svg" type="image/x-icon" />
     <title>Pilldox Client| Account</title>
-    <link rel="stylesheet" href="../../dist/style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <nav class="py-5 w-full flex items-center justify-between container mx-auto">
             <!-- logo -->
             <div>
-                <a href="../index.html" class="flex items-center gap-1">
+                <a href="user-homepage.html" class="flex items-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="51" height="48" viewBox="0 0 51 48" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M25.394 16.3611L32.2544 12.4005C33.6571 11.5903 34.1425 9.77961 33.3316 8.37627C32.5218 6.97328 30.7114 6.48818 29.3084 7.2984L22.8436 11.0309L4.41683 0.392493C3.01315 -0.41772 1.20247 0.0673744 0.392597 1.47071C-0.41796 2.8737 0.0671392 4.68438 1.47082 5.4946L20.2922 16.3614L22.8426 17.8339L25.394 16.3614V16.3611ZM22.8436 2.19319C24.4702 2.19319 25.7893 3.51259 25.7893 5.13955C25.7893 6.76651 24.4702 8.08487 22.8436 8.08487C21.217 8.08487 19.8979 6.76617 19.8979 5.13955C19.8979 3.51293 21.2163 2.19319 22.8436 2.19319Z"
@@ -71,7 +71,7 @@
                     <div
                         class="absolute w-full navbar-dropdown left-0 bg-white rounded-md px-8 py-2 shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)] translate-y-7 opacity-0 -z-10 transition-all duration-500 mt-5">
                         <div>
-                            <a href="#" class="py-4 border-b border-[#14141414] block">Account</a>
+                            <a href="./account.html" class="py-4 border-b border-[#14141414] block">Account</a>
                             <a href="#" class="py-4 block">Log Out</a>
                         </div>
                     </div>
@@ -81,18 +81,19 @@
     </header>
 
     <!-- body -->
-    <main class="h-[calc(100vh-90px)] container mx-auto py-40 px-24">
+    <main class="h-[calc(100vh-90px)] container mx-auto px-24">
 
         <!-- title -->
         <div class="mt-20 font-poppins">
             <h2 class="font-boldFont text-4xl text-[#222222]">Account</h2>
-            <p class="mt-4"><span class="font-boldFont text-[#222222]">Istiak Mahmud Kawser</span>,
-                khankawser123@gmail.com · <a href="" class="underline">Go to profile</a></p>
+            <p class="mt-4 text-[#6A6A6A]"><span class="font-boldFont text-[#222222]">Istiak Mahmud Kawser</span>,
+                khankawser123@gmail.com · <a href="profile.html" class="underline text-[#222]">Go to profile</a></p>
         </div>
 
         <!-- cards -->
-        <div class="flex items-center gap-10">
-            <div class=" rounded-lg shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)] flex-1">
+        <div class="flex items-center gap-10 mt-10">
+            <a href="update-personal-information.html"
+                class="hover:shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)] flex-1 p-6 rounded-xl duration-300 transition border border-black/10">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <path
@@ -101,18 +102,33 @@
                     </svg>
                 </div>
 
-                <div>
+                <div class="mt-6">
                     <h3 class="font-poppins font-semibold pb-4">Personal info</h3>
-                    <p>Provide personal details and how we can reach you</p>
+                    <p class="text-[#2E2E2E] w-1/2">Provide personal details and how we can reach you</p>
                 </div>
-            </div>
+            </a>
+            <a href="login-and-security.html"
+                class="hover:shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)] flex-1 p-6 rounded-xl duration-300 transition border border-black/10">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path
+                            d="M16 0.799805L16.56 1.1698C20.4 3.7298 24.2 4.9998 28 4.9998H29V17.4998C29 25.5698 23.21 30.9998 16 30.9998C8.79 30.9998 3 25.5698 3 17.4998V4.9998H4C7.8 4.9998 11.6 3.7298 15.45 1.1698L16 0.799805ZM15 3.7998C12.0698 5.581 8.76678 6.65919 5.35 6.9498L5 6.9698V17.4998C5 24.0598 9.35 28.4998 15 28.9598V3.7998ZM17 3.7998V28.9598C22.65 28.4898 27 24.0598 27 17.4998V6.9698L26.65 6.9498C23.2332 6.65919 19.9302 5.581 17 3.7998Z"
+                            fill="#222222" />
+                    </svg>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="font-poppins font-semibold pb-4">Login & security</h3>
+                    <p class="text-[#2E2E2E] w-1/2">Update your password and secure your account</p>
+                </div>
+            </a>
         </div>
     </main>
 
 
     <!-- Scripts -->
-    <script src="../assets/js/plugins.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

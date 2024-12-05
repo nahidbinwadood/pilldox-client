@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/images/logo.svg" type="image/x-icon" />
+    <title>Pilldox Client| Update Profile Information</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/nice-select.css" />
+</head>
+
+<body>
+    <!-- navbar -->
+    <header class=" border-b border-black/10">
+        <nav class="py-5 w-full flex items-center justify-between container mx-auto">
+            <!-- logo -->
+            <div>
+                <a href="user-homepage.html" class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="48" viewBox="0 0 51 48" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M25.394 16.3611L32.2544 12.4005C33.6571 11.5903 34.1425 9.77961 33.3316 8.37627C32.5218 6.97328 30.7114 6.48818 29.3084 7.2984L22.8436 11.0309L4.41683 0.392493C3.01315 -0.41772 1.20247 0.0673744 0.392597 1.47071C-0.41796 2.8737 0.0671392 4.68438 1.47082 5.4946L20.2922 16.3614L22.8426 17.8339L25.394 16.3614V16.3611ZM22.8436 2.19319C24.4702 2.19319 25.7893 3.51259 25.7893 5.13955C25.7893 6.76651 24.4702 8.08487 22.8436 8.08487C21.217 8.08487 19.8979 6.76617 19.8979 5.13955C19.8979 3.51293 21.2163 2.19319 22.8436 2.19319Z"
+                            fill="#FF4040" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M37.8602 28.1984C37.0469 29.6072 35.2462 30.0892 33.837 29.2759C32.4279 28.4626 31.9455 26.6616 32.7588 25.2527C33.5718 23.8435 35.3739 23.3612 36.7827 24.1745C38.1919 24.9878 38.6742 26.7896 37.8602 28.1987M24.3157 23.3237V31.2445C24.3157 32.865 25.642 34.1902 27.2614 34.1902C28.8808 34.1902 30.2071 32.865 30.2071 31.2445V23.7799L48.6338 13.1412C50.0375 12.331 50.5219 10.5203 49.7121 9.11694C48.9015 7.7136 47.0908 7.22885 45.6878 8.03906L26.8665 18.9052L24.3151 20.378V23.3234L24.3157 23.3237Z"
+                            fill="#F8BF2C" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.82562 28.1995C7.01231 26.7903 7.49466 24.9885 8.90384 24.1742C10.3127 23.3612 12.1148 23.8439 12.9277 25.2535C13.741 26.6616 13.2587 28.4633 11.8495 29.2767C10.4407 30.09 8.63859 29.6073 7.82562 28.1991M18.8194 18.9056L11.9589 14.945C10.5563 14.1351 8.74558 14.6202 7.93571 16.0232C7.12585 17.4266 7.61094 19.2369 9.01394 20.0468L15.4788 23.7796V45.0567C15.4788 46.6771 16.804 48.0024 18.4244 48.0024C20.0449 48.0024 21.3701 46.6771 21.3701 45.0567V20.3781L18.8187 18.9052L18.8194 18.9056Z"
+                            fill="#008080" />
+                    </svg>
+                    <p class="font-boldFont">Connect</p>
+                </a>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="flex items-center gap-6">
+                <a href="community-join.html"
+                    class="font-boldFont text-[#141414] w-32  flex items-center justify-center">
+                    Inbox
+                </a>
+
+                <!-- dropdown -->
+                <button
+                    class="px-8 py-3 border border-[#E6EBEF] text-[#222222] rounded-lg font-mediumFont navbar-dropdown-btn relative ">
+                    <div class="flex items-center gap-2">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M6.79199 5.62435C6.79199 3.85523 8.23121 2.41602 10.0003 2.41602C11.769 2.41602 13.2079 3.85444 13.2087 5.6229C13.2011 7.35868 11.8508 8.75681 10.129 8.82431C10.0423 8.81582 9.95671 8.81672 9.87889 8.82285C8.11768 8.73861 6.79199 7.34126 6.79199 5.62435Z"
+                                    stroke="#222222" stroke-width="1.5" />
+                                <path
+                                    d="M6.18422 16.5354L6.18217 16.534C5.28374 15.9351 4.88281 15.1957 4.88281 14.4831C4.88281 13.7699 5.28435 13.0225 6.19006 12.4157C7.21325 11.7391 8.59388 11.3789 10.0099 11.3789C11.4269 11.3789 12.8029 11.7395 13.8168 12.4154C14.7097 13.0107 15.1092 13.7496 15.1161 14.4694C15.115 15.1901 14.7132 15.9291 13.814 16.5359C12.7961 17.2191 11.4169 17.5831 9.99948 17.5831C8.58173 17.5831 7.20222 17.2189 6.18422 16.5354Z"
+                                    stroke="#222222" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p>Hi, Istiak</p>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+                                fill="none">
+                                <path
+                                    d="M9.96004 4.47461L6.70004 7.73461C6.31504 8.11961 5.68504 8.11961 5.30004 7.73461L2.04004 4.47461"
+                                    stroke="#222222" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- dropdown -->
+                    <div
+                        class="absolute w-full navbar-dropdown left-0 bg-white rounded-md px-8 py-2 shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)] translate-y-7 opacity-0 -z-10 transition-all duration-500 mt-5">
+                        <div>
+                            <a href="./account.html" class="py-4 border-b border-[#14141414] block">Account</a>
+                            <a href="#" class="py-4 block">Log Out</a>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- body -->
+    <main class="h-[calc(100vh-90px)]   mx-auto px-24 max-w-[950px]">
+
+        <!-- title -->
+        <div class="mt-20 font-poppins">
+            <!-- top title -->
+            <div>
+                <h3 class="text-[#222222] flex items-center gap-2 font-mediumFont"><span>Account</span>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                            <path
+                                d="M4.45508 10.46L7.71508 7.20004C8.10008 6.81504 8.10008 6.18504 7.71508 5.80004L4.45508 2.54004"
+                                stroke="#6A6A6A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span>Personal info</span>
+                </h3>
+            </div>
+            <!-- main title -->
+            <h2 class="font-boldFont text-4xl text-[#222222] mt-3">Personal info</h2>
+
+        </div>
+
+        <!-- Information Accordion -->
+        <section class="mt-10 pb-20">
+            <!-- single item -->
+            <div class="flex justify-between py-5 border-b border-black/10">
+                <div>
+                    <h3 class="font-boldFont">Name</h3>
+                    <p class="text-[#6A6A6A] font-normalFont tracking-wider mt-1">Istiak Mahmud Kawser</p>
+                </div>
+                <!-- edit btn -->
+                <div>
+                    <button class="font-boldFont underline text-textColor">Edit</button>
+                </div>
+            </div>
+
+            <!-- accordion body::name -->
+            <div class="update-information-accordion-name py-5 hidden">
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="font-boldFont">Legal name</h3>
+                        <p class="text-[#6A6A6A] font-normalFont tracking-wider mt-1">Make sure this matches the name on
+                            your government ID.</p>
+                    </div>
+                    <!-- edit btn -->
+                    <div>
+                        <button class="font-boldFont underline text-textColor">Cancel</button>
+                    </div>
+                </div>
+                <!-- form -->
+                <div class="mt-6">
+                    <form action="">
+                        <div class="w-full flex items-center gap-5">
+                            <div class="border border-black rounded-2xl w-full p-4">
+                                <label for="firstName" class=" text-[#6A6A6A]">First Name</label>
+                                <div class="mt-1">
+                                    <input class="w-full focus:outline-none font-mediumFont text-textColor"
+                                        value="Istiak Mahmud" type="text" name="firstName" id="firstName">
+                                </div>
+                            </div>
+                            <div class="border border-black rounded-2xl w-full p-4">
+                                <label for="lastName" class=" text-[#6A6A6A]">Last Name</label>
+                                <div class="mt-1">
+                                    <input class="w-full focus:outline-none font-mediumFont text-textColor"
+                                        value="Istiak Mahmud" type="text" name="lastName" id="lastName">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <button class="px-8 py-3 font-boldFont bg-[#FF4040] text-white rounded-md">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- single item -->
+            <div class="flex justify-between py-5 border-b border-black/10">
+                <div>
+                    <h3 class="font-boldFont">Email address</h3>
+                    <p class="text-[#6A6A6A] font-normalFont tracking-wider mt-1">khankawser123@gmail.com</p>
+                </div>
+                <!-- edit btn -->
+                <div>
+                    <button class="font-boldFont underline text-textColor">Edit</button>
+                </div>
+            </div>
+
+            <!-- accordion body::email -->
+            <div class="update-information-accordion-name py-5 hidden">
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="font-boldFont">Email address</h3>
+                        <p class="text-[#6A6A6A] font-normalFont tracking-wider mt-1">Use an address you’ll always have
+                            access to.</p>
+                    </div>
+                    <!-- edit btn -->
+                    <div>
+                        <button class="font-boldFont underline text-textColor">Cancel</button>
+                    </div>
+                </div>
+                <!-- form -->
+                <div class="mt-6">
+                    <form action="">
+                        <div class="w-full flex items-center gap-5">
+                            <div class="border border-black rounded-2xl w-full p-4">
+                                <label for="firstName" class=" text-[#6A6A6A]">Email Address</label>
+                                <div class="mt-1">
+                                    <input class="w-full focus:outline-none font-mediumFont text-textColor"
+                                        value="istiakmahmud165@gmail.com" type="email" name="firstName" id="firstName">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <button class="px-8 py-3 font-boldFont bg-[#FF4040] text-white rounded-md">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- single item -->
+            <div class="flex justify-between py-5 border-b border-black/10">
+                <div>
+                    <h3 class="font-boldFont">Address</h3>
+                    <p class="text-[#6A6A6A] font-normalFont tracking-wider mt-1">4670 Coburn Hollow Road, Rio Grande,
+                        Puerto Rico 00745, US</p>
+                </div>
+                <!-- edit btn -->
+                <div>
+                    <button class="font-boldFont underline text-textColor">Edit</button>
+                </div>
+            </div>
+
+            <!-- accordion body::address -->
+            <div class="update-information-accordion-name py-5 hidden">
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="font-boldFont">Address</h3>
+                        <p class="text-[#6A6A6A] font-normalFont tracking-wider mt-1">Use a permanent address where you
+                            can receive mail.</p>
+                    </div>
+                    <!-- edit btn -->
+                    <div>
+                        <button class="font-boldFont underline text-textColor">Cancel</button>
+                    </div>
+                </div>
+                <!-- form -->
+                <div class="mt-6">
+                    <form action="" class="space-y-6">
+                        <!-- select -->
+                        <div class="accordion-body-address w-full !mb-6">
+                            <select class="text-sm md:text-base">
+                                <option value="Country/region" disabled selected>Country/region</option>
+                                <option value="United States">United States</option>
+                                <option value="Canada">Canada</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                        </div>
+
+                        <div class="w-full flex items-center gap-5">
+                            <div class="border border-black rounded-2xl w-full p-4">
+                                <label for="streetAddress" class=" text-[#6A6A6A]">Street Address</label>
+                                <div class="mt-1">
+                                    <input class="w-full focus:outline-none font-mediumFont text-textColor"
+                                        value=" 4670 Coburn Hollow Road" type="text" name="streetAddress"
+                                        id="streetAddress">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full flex items-center gap-5">
+                            <div class="border border-black rounded-2xl w-full p-4">
+                                <label for="streetAddress1" class=" text-[#6A6A6A]">Street Address</label>
+                                <div class="mt-1">
+                                    <input class="w-full focus:outline-none font-mediumFont text-textColor"
+                                        value=" 4670 Coburn Hollow Road" type="text" name="streetAddress1"
+                                        id="streetAddress1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full flex items-center gap-5">
+                            <div class="w-full flex items-center gap-5">
+                                <div class="border border-black rounded-2xl w-full p-4">
+                                    <label for="city-update" class=" text-[#6A6A6A]">City</label>
+                                    <div class="mt-1">
+                                        <input class="w-full focus:outline-none font-mediumFont text-textColor"
+                                            value=" 4670 Coburn Hollow Road" type="text" name="city-update"
+                                            id="city-update">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full flex items-center gap-5">
+                                <div class="border border-black rounded-2xl w-full p-4">
+                                    <label for="state-update" class=" text-[#6A6A6A]">State</label>
+                                    <div class="mt-1">
+                                        <input class="w-full focus:outline-none font-mediumFont text-textColor"
+                                            value="Puerto Rico" type="text" name="state-update" id="state-update">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full flex items-center gap-5">
+                            <div class="border border-black rounded-2xl w-full p-4">
+                                <label for="zip-update" class=" text-[#6A6A6A]">Zip</label>
+                                <div class="mt-1">
+                                    <input class="w-full focus:outline-none font-mediumFont text-textColor"
+                                        value="91156" type="number" name="zip-update" id="zip-update">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <button class="px-8 py-3 font-boldFont bg-[#FF4040] text-white rounded-md">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <!-- Scripts -->
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

@@ -63,5 +63,6 @@ $(document).ready(function () {
 
     //nice select:
     $(".hero-banner-select").niceSelect();
+    $(".accordion-body-address").niceSelect();
 
 });
