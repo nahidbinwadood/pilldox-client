@@ -64,8 +64,7 @@ $(document).ready(function () {
   });
 
   //update profile page:
-
-  //containers:
+  // Containers:
   const nameUpdateContainer = document.querySelector('.name-update-container');
   const emailUpdateContainer = document.querySelector(
     '.email-update-container'
@@ -74,7 +73,7 @@ $(document).ready(function () {
     '.address-update-container'
   );
 
-  //buttons:
+  // Buttons:
   const nameEditBtn = document.querySelector('.name-edit-btn');
   const nameEditCancelBtn = document.querySelector(
     '.update-information-accordion-cancel-btn'
@@ -86,7 +85,7 @@ $(document).ready(function () {
   const addressEditBtn = document.querySelector('.address-edit-btn');
   const addressCancelBtn = document.querySelector('.address-cancel-btn');
 
-  //accordions:
+  // Accordions:
   const nameUpdateAccordion = document.querySelector(
     '.update-information-accordion-name'
   );
@@ -97,11 +96,12 @@ $(document).ready(function () {
     '.update-information-accordion-address'
   );
 
-  //name:
+  // Name Edit Action:
   nameEditBtn?.addEventListener('click', () => {
     nameUpdateContainer?.classList.add('hidden');
     nameUpdateAccordion?.classList.remove('hidden');
 
+    // Disable email and address options
     emailUpdateContainer?.classList.add('opacity-60');
     addressUpdateContainer?.classList.add('opacity-60');
     emailEditBtn?.setAttribute('disabled', true);
@@ -110,69 +110,135 @@ $(document).ready(function () {
     addressEditBtn?.classList.add('cursor-not-allowed');
   });
 
+  // Name Edit Cancel Action:
   nameEditCancelBtn?.addEventListener('click', () => {
     nameUpdateContainer?.classList.remove('hidden');
     nameUpdateAccordion?.classList.add('hidden');
+
+    // Re-enable email and address options
     emailUpdateContainer?.classList.remove('opacity-60');
     addressUpdateContainer?.classList.remove('opacity-60');
-
-    emailEditBtn?.removeAttribute('disabled', true);
+    emailEditBtn?.removeAttribute('disabled');
     emailEditBtn?.classList.remove('cursor-not-allowed');
-    addressEditBtn?.removeAttribute('disabled', true);
+    addressEditBtn?.removeAttribute('disabled');
     addressEditBtn?.classList.remove('cursor-not-allowed');
   });
 
-  //email:
+  // Email Edit Action:
   emailEditBtn?.addEventListener('click', () => {
     emailUpdateContainer?.classList.add('hidden');
-    emailUpdateAccordion.classList.remove('hidden');
+    emailUpdateAccordion?.classList.remove('hidden');
 
+    // Disable name and address options
     nameUpdateContainer?.classList.add('opacity-60');
     addressUpdateContainer?.classList.add('opacity-60');
-
     nameEditBtn?.setAttribute('disabled', true);
     nameEditBtn?.classList.add('cursor-not-allowed');
     addressEditBtn?.setAttribute('disabled', true);
     addressEditBtn?.classList.add('cursor-not-allowed');
   });
 
+  // Email Edit Cancel Action:
   emailCancelBtn?.addEventListener('click', () => {
     emailUpdateContainer?.classList.remove('hidden');
     emailUpdateAccordion?.classList.add('hidden');
 
+    // Re-enable name and address options
     nameUpdateContainer?.classList.remove('opacity-60');
     addressUpdateContainer?.classList.remove('opacity-60');
-
-    nameEditBtn?.removeAttribute('disabled', true);
+    nameEditBtn?.removeAttribute('disabled');
     nameEditBtn?.classList.remove('cursor-not-allowed');
-    addressEditBtn?.removeAttribute('disabled', true);
+    addressEditBtn?.removeAttribute('disabled');
     addressEditBtn?.classList.remove('cursor-not-allowed');
   });
 
-  //address:
+  // Address Edit Action:
   addressEditBtn?.addEventListener('click', () => {
     addressUpdateContainer?.classList.add('hidden');
     addressUpdateAccordion?.classList.remove('hidden');
 
+    // Disable name and email options
     nameUpdateContainer?.classList.add('opacity-60');
     emailUpdateContainer?.classList.add('opacity-60');
-
     nameEditBtn?.setAttribute('disabled', true);
     nameEditBtn?.classList.add('cursor-not-allowed');
     emailEditBtn?.setAttribute('disabled', true);
     emailEditBtn?.classList.add('cursor-not-allowed');
   });
 
-  addressCancelBtn?.addEventListener('click', ()=>{
+  // Address Edit Cancel Action:
+  addressCancelBtn?.addEventListener('click', () => {
     addressUpdateContainer?.classList.remove('hidden');
     addressUpdateAccordion?.classList.add('hidden');
 
+    // Re-enable name and email options
     nameUpdateContainer?.classList.remove('opacity-60');
     emailUpdateContainer?.classList.remove('opacity-60');
-
-    nameEditBtn?.removeAttribute('disabled', true);
+    nameEditBtn?.removeAttribute('disabled');
     nameEditBtn?.classList.remove('cursor-not-allowed');
-    emailEditBtn?.removeAttribute('disabled', true);
+    emailEditBtn?.removeAttribute('disabled');
     emailEditBtn?.classList.remove('cursor-not-allowed');
-  })
+  });
+
+  //modal on personal information update:
+  const addIntroBtn = document.querySelector(
+    '.update-information-add-intro-btn'
+  );
+  const aboutYouModal = document.getElementById('about-you-modal');
+  const aboutYouModalContainer = document.getElementById(
+    'about-you-modal-container'
+  );
+  const aboutYouModalOverlay = document.getElementById(
+    'about-you-modal-overlay'
+  );
+
+  addIntroBtn?.addEventListener('click', () => {
+    if (aboutYouModal && aboutYouModalOverlay) {
+      showUpdateIntroModal();
+    } else {
+      hideUpdateIntroModal();
+    }
+  });
+
+  // Close modal when clicking outside
+  document.addEventListener('click', (e) => {
+    if (
+      aboutYouModalContainer.contains(e.target) &&
+      !aboutYouModal.contains(e.target)
+    ) {
+      hideUpdateIntroModal();
+    }
+  });
+
+  function hideUpdateIntroModal() {
+    // Add fade-out and scale-down transitions
+    aboutYouModal.classList.add('opacity-0', 'scale-95');
+    aboutYouModalContainer.classList.add('opacity-0');
+    aboutYouModalOverlay.classList.add('opacity-0');
+
+    // Use setTimeout to allow transition to complete before adding hidden class
+
+    aboutYouModalOverlay.classList.add('hidden');
+    aboutYouModalContainer.classList.remove('flex');
+    aboutYouModalContainer.classList.add('hidden');
+    aboutYouModal.classList.add('hidden');
+  }
+
+  function showUpdateIntroModal() {
+    // Remove hidden classes first
+    aboutYouModalOverlay.classList.remove('hidden');
+    aboutYouModalContainer.classList.remove('hidden');
+    aboutYouModal.classList.remove('hidden');
+
+    // Trigger reflow to ensure transition works
+    void aboutYouModalContainer.offsetWidth;
+
+    // Add flex and transitions
+    aboutYouModalContainer.classList.add('flex');
+
+    // Add fade-in and scale-up transitions
+    aboutYouModalOverlay.classList.remove('opacity-0');
+    aboutYouModalContainer.classList.remove('opacity-0');
+    aboutYouModal.classList.remove('opacity-0', 'scale-95');
+  }
 });
