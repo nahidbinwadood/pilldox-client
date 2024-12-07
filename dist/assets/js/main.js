@@ -1,5 +1,6 @@
 $(document).ready(function () {
   //nice select:
+  $('.hero-banner-select-sm').niceSelect();
   $('.hero-banner-select').niceSelect();
   $('.accordion-body-address').niceSelect();
   $('.details-page-select').niceSelect();

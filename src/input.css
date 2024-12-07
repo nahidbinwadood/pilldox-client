@@ -22,31 +22,37 @@
     url('./assets/fonts/HelveticaNeueBold.ttf') format('truetype');
 }
 
-
 .hero-banner-select {
-  @apply w-36 text-[#2E2E2E] border-t-0 border-r-0 border-b-0 rounded-none font-poppins font-semibold border-l border-gray-200 px-4
+  @apply w-36 text-[#2E2E2E] border-t-0 border-r-0 border-b-0 rounded-none font-poppins font-semibold border-l border-gray-200 px-4;
 }
 
 .hero-banner-select .list {
-  @apply font-poppins font-semibold
+  @apply font-poppins font-semibold;
+}
+.hero-banner-select-sm {
+  @apply w-full text-[#2E2E2E] border-t-0 border-r-0 border-b-0 font-poppins font-semibold border-l border-gray-200 px-4 rounded-md;
 }
 
-.accordion-body-address{
-  @apply !w-full px-5 !h-20 !leading-[80px] !rounded-2xl !text-base !font-mediumFont !border-black !text-textColor
+.hero-banner-select-sm .list {
+  @apply font-poppins font-semibold w-full;
 }
-.accordion-body-address .list{
-  @apply  w-full
+
+.accordion-body-address {
+  @apply !w-full px-5 !h-20 !leading-[80px] !rounded-2xl !text-base !font-mediumFont !border-black !text-textColor;
 }
-.details-page-select{
-  @apply !w-[100px] px-5 leading-9 !rounded-2xl !text-base !font-normalFont !border-[#ECECEC] !text-textColor
+.accordion-body-address .list {
+  @apply w-full;
 }
-.details-page-select .list{
-  @apply  w-full
+.details-page-select {
+  @apply !w-[100px] px-5 leading-9 !rounded-2xl !text-base !font-normalFont !border-[#ECECEC] !text-textColor;
+}
+.details-page-select .list {
+  @apply w-full;
 }
 
 .details-page .owl-carousel .owl-nav {
-  @apply hidden
+  @apply hidden;
 }
-.details-page .owl-carousel .owl-item{
-  @apply  rounded-md
+.details-page .owl-carousel .owl-item {
+  @apply rounded-md;
 }
