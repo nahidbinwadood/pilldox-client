@@ -38,7 +38,7 @@
 }
 
 .accordion-body-address {
-  @apply !w-full px-5 !h-20 !leading-[80px] !rounded-2xl !text-base !font-mediumFont !border-black !text-textColor;
+  @apply !w-full px-5 !h-16 md:!h-20 !leading-[64px] md:!leading-[80px] !rounded-lg md:rounded-xl lg:rounded-2xl !text-base !font-mediumFont !border-black !text-textColor;
 }
 .accordion-body-address .list {
   @apply w-full;
