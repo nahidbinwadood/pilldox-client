@@ -300,46 +300,50 @@ $(document).ready(function () {
   });
 
   // Reset stars if clicking outside the review area
-  // document.addEventListener('click', (e) => {
-  //   const reviewStarsContainer = document.getElementById('review-stars');
+  document.addEventListener('click', (e) => {
+    const reviewStarsContainer = document.getElementById('review-stars');
+    const reviewerNameInput = document.getElementById('reviewer-name');
+    const reviewerEmailInput = document.getElementById('reviewer-email');
+    const reviewerMessageInput = document.getElementById('reviewer-message');
 
-  //   if (reviewStarsContainer && !reviewStarsContainer.contains(e.target)) {
-  //     // Reset to current rating or completely clear
-  //     setActiveStars(0);
-  //     reviewCountInput.value = 0;
-  //     currentRating = 0;
-  //   }
-  // });
+    if (
+      reviewStarsContainer &&
+      !reviewStarsContainer.contains(e.target) &&
+      !reviewerNameInput.contains(e.target) &&
+      !reviewerEmailInput.contains(e.target) &&
+      !reviewerMessageInput.contains(e.target)
+    ) {
+      // Reset to current rating or completely clear
+      setActiveStars(0);
+      reviewCountInput.value = 0;
+      currentRating = 0;
+    }
+  });
 
   //review ::end
 
-
   //carousel::start
-  $(document).ready(function () {
-    // Initialize Owl Carousel
-    $('.details-page .owl-carousel').owlCarousel({
-      loop: true, // Enable looping for infinite scroll
-      margin: 20,
-      nav: true, // Show next/prev navigation arrows
-      autoplay: true, // Enable autoplay (optional)
-      autoplayTimeout: 3000, // Time between slides
-      items: 4, // Show 1 item at a time
-    });
-
-    // Update preview image when active slide changes
-    $('.details-page .owl-carousel').on(
-      'changed.owl.carousel',
-      function (event) {
-        var currentSlide = event.item.index; // Get the index of the current slide
-        var currentImageSrc = $(event.target)
-          .find('.owl-item')
-          .eq(currentSlide)
-          .find('img')
-          .attr('src'); // Get the image source of the active slide
-
-        // Set the preview image's source to the active slide's image
-        $('#preview').attr('src', currentImageSrc);
-      }
-    );
+  // Initialize Owl Carousel
+  $('.details-page .owl-carousel').owlCarousel({
+    loop: true, // Enable looping for infinite scroll
+    margin: 20,
+    nav: true, // Show next/prev navigation arrows
+    autoplay: true, // Enable autoplay (optional)
+    autoplayTimeout: 3000, // Time between slides
+    items: 4, // Show 1 item at a time
   });
+
+  // Update preview image when active slide changes
+  $('.details-page .owl-carousel').on('changed.owl.carousel', function (event) {
+    var currentSlide = event.item.index; // Get the index of the current slide
+    var currentImageSrc = $(event.target)
+      .find('.owl-item')
+      .eq(currentSlide)
+      .find('img')
+      .attr('src'); // Get the image source of the active slide
+
+    // Set the preview image's source to the active slide's image
+    $('#preview').attr('src', currentImageSrc);
+  });
+  //carousel::end
 });
