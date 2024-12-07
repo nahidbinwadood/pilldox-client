@@ -37,3 +37,16 @@
 .accordion-body-address .list{
   @apply  w-full
 }
+.details-page-select{
+  @apply !w-[100px] px-5 leading-9 !rounded-2xl !text-base !font-normalFont !border-[#ECECEC] !text-textColor
+}
+.details-page-select .list{
+  @apply  w-full
+}
+
+.details-page .owl-carousel .owl-nav {
+  @apply hidden
+}
+.details-page .owl-carousel .owl-item{
+  @apply  rounded-md
+}

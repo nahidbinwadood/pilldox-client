@@ -2,6 +2,7 @@ $(document).ready(function () {
   //nice select:
   $('.hero-banner-select').niceSelect();
   $('.accordion-body-address').niceSelect();
+  $('.details-page-select').niceSelect();
 
   // hideButton:
   const hidePasswordButton = document.querySelector('.hidePass');
@@ -203,7 +204,7 @@ $(document).ready(function () {
   // Close modal when clicking outside
   document.addEventListener('click', (e) => {
     if (
-      aboutYouModalContainer.contains(e.target) &&
+      aboutYouModalContainer?.contains(e.target) &&
       !aboutYouModal.contains(e.target)
     ) {
       hideUpdateIntroModal();
@@ -241,4 +242,104 @@ $(document).ready(function () {
     aboutYouModalContainer.classList.remove('opacity-0');
     aboutYouModal.classList.remove('opacity-0', 'scale-95');
   }
+
+  //review ::start
+  const reviewStars = document.querySelectorAll('.star');
+  const reviewCountInput = document.getElementById('user-review-stars');
+  function setActiveStars(count) {
+    reviewStars?.forEach((star, index) => {
+      const path = star.querySelector('path');
+
+      if (path && index < count) {
+        // Active state: Use gradient fill and stroke
+        path.style.fill = 'url(#paint0_linear_8485_2796)';
+        path.setAttribute('stroke', 'url(#paint0_linear_8485_2796)');
+      } else {
+        // Inactive state: Remove fill, use default stroke
+        path.style.fill = 'none';
+        path.setAttribute('stroke', 'url(#paint0_linear_8485_2796)');
+      }
+    });
+  }
+
+  // Keep track of the current rating
+  let currentRating = 0;
+
+  reviewStars?.forEach((star) => {
+    if (star) {
+      // Add hover effect
+      star?.addEventListener('mouseenter', () => {
+        const count = parseInt(star.getAttribute('data-index'));
+
+        // Preview rating on hover
+        reviewStars?.forEach((s, index) => {
+          const path = s.querySelector('path');
+
+          if (path && index < count) {
+            path.style.fill = 'url(#paint0_linear_8485_2796)';
+            path.setAttribute('stroke', 'url(#paint0_linear_8485_2796)');
+          } else {
+            path.style.fill = 'none';
+            path.setAttribute('stroke', 'url(#paint0_linear_8485_2796)');
+          }
+        });
+      });
+
+      // Restore previous state or reset on mouse leave
+      star.addEventListener('mouseleave', () => {
+        setActiveStars(currentRating);
+      });
+
+      // Click to set rating
+      star.addEventListener('click', () => {
+        currentRating = parseInt(star.getAttribute('data-index'));
+        reviewCountInput.value = currentRating;
+        setActiveStars(currentRating);
+      });
+    }
+  });
+
+  // Reset stars if clicking outside the review area
+  // document.addEventListener('click', (e) => {
+  //   const reviewStarsContainer = document.getElementById('review-stars');
+
+  //   if (reviewStarsContainer && !reviewStarsContainer.contains(e.target)) {
+  //     // Reset to current rating or completely clear
+  //     setActiveStars(0);
+  //     reviewCountInput.value = 0;
+  //     currentRating = 0;
+  //   }
+  // });
+
+  //review ::end
+
+
+  //carousel::start
+  $(document).ready(function () {
+    // Initialize Owl Carousel
+    $('.details-page .owl-carousel').owlCarousel({
+      loop: true, // Enable looping for infinite scroll
+      margin: 20,
+      nav: true, // Show next/prev navigation arrows
+      autoplay: true, // Enable autoplay (optional)
+      autoplayTimeout: 3000, // Time between slides
+      items: 4, // Show 1 item at a time
+    });
+
+    // Update preview image when active slide changes
+    $('.details-page .owl-carousel').on(
+      'changed.owl.carousel',
+      function (event) {
+        var currentSlide = event.item.index; // Get the index of the current slide
+        var currentImageSrc = $(event.target)
+          .find('.owl-item')
+          .eq(currentSlide)
+          .find('img')
+          .attr('src'); // Get the image source of the active slide
+
+        // Set the preview image's source to the active slide's image
+        $('#preview').attr('src', currentImageSrc);
+      }
+    );
+  });
 });
