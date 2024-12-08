@@ -324,27 +324,75 @@ $(document).ready(function () {
   //review ::end
 
   //carousel::start
-  // Initialize Owl Carousel
   $('.details-page .owl-carousel').owlCarousel({
-    loop: true, // Enable looping for infinite scroll
-    margin: 20,
-    nav: true, // Show next/prev navigation arrows
-    autoplay: true, // Enable autoplay (optional)
-    autoplayTimeout: 3000, // Time between slides
-    items: 4, // Show 1 item at a time
+    loop: true,
+    margin: 15, // Consistent margin
+    nav: true,
+    dots: false,
+    items: 4,
+    responsive: {
+      0: {
+        items: 2,
+        margin: 10,
+      },
+      480: {
+        items: 2,
+        margin: 15,
+      },
+      768: {
+        items: 3,
+        margin: 15,
+      },
+      1024: {
+        items: 3,
+        margin: 20,
+      },
+      1280: {
+        items: 4,
+        margin: 20,
+      },
+    },
   });
 
-  // Update preview image when active slide changes
-  $('.details-page .owl-carousel').on('changed.owl.carousel', function (event) {
-    var currentSlide = event.item.index; // Get the index of the current slide
-    var currentImageSrc = $(event.target)
-      .find('.owl-item')
-      .eq(currentSlide)
-      .find('img')
-      .attr('src'); // Get the image source of the active slide
+  // Function to update preview image
+  function updatePreviewImage(imageSrc) {
+    $('#preview').attr('src', imageSrc);
+  }
 
-    // Set the preview image's source to the active slide's image
-    $('#preview').attr('src', currentImageSrc);
+  // Add click event to carousel items
+  $('.details-page .carousel-item').on('click', function () {
+    // Get the image source of the clicked slide
+    var clickedImageSrc = $(this).find('img').attr('src');
+
+    // Update the preview image
+    updatePreviewImage(clickedImageSrc);
+
+    // Remove active border from all carousel items
+    $('.details-page .carousel-item').removeClass('border-4 border-blue-500');
+
+    // Add border to the clicked item
+    $(this).addClass('border-4 border-blue-500');
+  });
+
+  // Highlight active slide when carousel changes
+  $('.details-page .owl-carousel').on('changed.owl.carousel', function () {
+    // Remove active border from all carousel items
+    $('.details-page .carousel-item').removeClass('border-4 border-blue-500');
+
+    // Find the active slide in the Owl Carousel
+    var $owlCarousel = $('.details-page .owl-carousel');
+    var $activeItem = $owlCarousel
+      .find('.owl-item.active')
+      .first()
+      .find('.carousel-item');
+
+    // Add border to the first active slide
+    $activeItem.addClass('border-4 border-blue-500');
+  });
+
+  // Initial highlighting when page loads
+  $(document).ready(function () {
+    $('.details-page .owl-carousel').trigger('to.owl.carousel', [0]);
   });
   //carousel::end
 

@@ -16,17 +16,16 @@
 
   <body>
     <!-- navbar -->
-    <header class="border-b border-black/10">
+    <header class="border-black/10 border-b">
       <nav
-        class="py-5 w-full flex items-center justify-between container mx-auto"
+        class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
       >
         <!-- logo -->
         <div>
           <a href="user-homepage.html" class="flex items-center gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="51"
-              height="48"
+              class="size-10 md:size-12 lg:size-14"
               viewBox="0 0 51 48"
               fill="none"
             >
@@ -54,7 +53,7 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="flex items-center gap-6">
+        <div class="md:flex items-center gap-6 hidden">
           <a
             href="community-join.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
@@ -125,29 +124,174 @@
             </div>
           </button>
         </div>
+
+        <div class="md:hidden">
+          <div
+            id="menu-hamburger"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0"
+              y="0"
+              viewBox="0 0 20 20"
+              style="enable-background: new 0 0 512 512"
+              xml:space="preserve"
+              class=""
+            >
+              <g>
+                <path
+                  fill="#ffffff"
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h12a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1z"
+                  clip-rule="evenodd"
+                  opacity="1"
+                  data-original="#ffffff"
+                  class=""
+                ></path>
+              </g>
+            </svg>
+          </div>
+          <div
+            id="menu-close"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0"
+              y="0"
+              viewBox="0 0 24 24"
+              style="enable-background: new 0 0 512 512"
+              xml:space="preserve"
+              class=""
+            >
+              <g>
+                <path
+                  d="M14.121 12 18 8.117A1.5 1.5 0 0 0 15.883 6L12 9.879 8.11 5.988A1.5 1.5 0 1 0 5.988 8.11L9.879 12 6 15.882A1.5 1.5 0 1 0 8.118 18L12 14.121 15.878 18A1.5 1.5 0 0 0 18 15.878Z"
+                  fill="#ffffff"
+                  opacity="1"
+                  data-original="#ffffff"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- sidebar -->
+        <div
+          id="sidebar"
+          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+        >
+          <!-- logo -->
+          <div
+            class="flex w-full items-center pb-2 pl-10 pt-12 font-roboto font-bold text-primary md:text-xl"
+          >
+            <a href="user-homepage.html" class="flex items-center gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-10 md:size-12 lg:size-14"
+                viewBox="0 0 51 48"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M25.394 16.3611L32.2544 12.4005C33.6571 11.5903 34.1425 9.77961 33.3316 8.37627C32.5218 6.97328 30.7114 6.48818 29.3084 7.2984L22.8436 11.0309L4.41683 0.392493C3.01315 -0.41772 1.20247 0.0673744 0.392597 1.47071C-0.41796 2.8737 0.0671392 4.68438 1.47082 5.4946L20.2922 16.3614L22.8426 17.8339L25.394 16.3614V16.3611ZM22.8436 2.19319C24.4702 2.19319 25.7893 3.51259 25.7893 5.13955C25.7893 6.76651 24.4702 8.08487 22.8436 8.08487C21.217 8.08487 19.8979 6.76617 19.8979 5.13955C19.8979 3.51293 21.2163 2.19319 22.8436 2.19319Z"
+                  fill="#FF4040"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M37.8602 28.1984C37.0469 29.6072 35.2462 30.0892 33.837 29.2759C32.4279 28.4626 31.9455 26.6616 32.7588 25.2527C33.5718 23.8435 35.3739 23.3612 36.7827 24.1745C38.1919 24.9878 38.6742 26.7896 37.8602 28.1987M24.3157 23.3237V31.2445C24.3157 32.865 25.642 34.1902 27.2614 34.1902C28.8808 34.1902 30.2071 32.865 30.2071 31.2445V23.7799L48.6338 13.1412C50.0375 12.331 50.5219 10.5203 49.7121 9.11694C48.9015 7.7136 47.0908 7.22885 45.6878 8.03906L26.8665 18.9052L24.3151 20.378V23.3234L24.3157 23.3237Z"
+                  fill="#F8BF2C"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.82562 28.1995C7.01231 26.7903 7.49466 24.9885 8.90384 24.1742C10.3127 23.3612 12.1148 23.8439 12.9277 25.2535C13.741 26.6616 13.2587 28.4633 11.8495 29.2767C10.4407 30.09 8.63859 29.6073 7.82562 28.1991M18.8194 18.9056L11.9589 14.945C10.5563 14.1351 8.74558 14.6202 7.93571 16.0232C7.12585 17.4266 7.61094 19.2369 9.01394 20.0468L15.4788 23.7796V45.0567C15.4788 46.6771 16.804 48.0024 18.4244 48.0024C20.0449 48.0024 21.3701 46.6771 21.3701 45.0567V20.3781L18.8187 18.9052L18.8194 18.9056Z"
+                  fill="#008080"
+                />
+              </svg>
+              <p class="font-boldFont">Connect</p>
+            </a>
+          </div>
+
+          <!-- Profile info -->
+          <div class="pt-4 px-4">
+            <button
+              class="px-5 py-2 text-sm text-[#222222] border-b border-black/20 font-mediumFont navbar-dropdown-btn relative w-full"
+            >
+              <div class="flex items-center gap-2">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M6.79199 5.62435C6.79199 3.85523 8.23121 2.41602 10.0003 2.41602C11.769 2.41602 13.2079 3.85444 13.2087 5.6229C13.2011 7.35868 11.8508 8.75681 10.129 8.82431C10.0423 8.81582 9.95671 8.81672 9.87889 8.82285C8.11768 8.73861 6.79199 7.34126 6.79199 5.62435Z"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M6.18422 16.5354L6.18217 16.534C5.28374 15.9351 4.88281 15.1957 4.88281 14.4831C4.88281 13.7699 5.28435 13.0225 6.19006 12.4157C7.21325 11.7391 8.59388 11.3789 10.0099 11.3789C11.4269 11.3789 12.8029 11.7395 13.8168 12.4154C14.7097 13.0107 15.1092 13.7496 15.1161 14.4694C15.115 15.1901 14.7132 15.9291 13.814 16.5359C12.7961 17.2191 11.4169 17.5831 9.99948 17.5831C8.58173 17.5831 7.20222 17.2189 6.18422 16.5354Z"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p>Hi, Istiak</p>
+                </div>
+              </div>
+            </button>
+          </div>
+          <!-- NavLinks ::start -->
+          <div class="py-4 pl-10 font-inter text-sm">
+            <div class="flex flex-col justify-center gap-4 font-boldFont">
+              <a href="community-inbox.html">Inbox</a>
+              <a href="account.html">Account</a>
+              <button class="inline text-start">Logout</button>
+            </div>
+          </div>
+          <!-- NavLinks ::end -->
+        </div>
       </nav>
     </header>
 
     <!-- body -->
-    <main class="min-h-[calc(100vh-91px)] py-20 px-24 container mx-auto">
+    <main
+      class="min-h-[calc(100vh-97px)] py-6 sm:py-10 md:py-14 lg:py-16 2xl:py-20 px-6 md:px-8 lg:px-12 2xl:px-24 container mx-auto"
+    >
       <!-- details -->
-      <section class="p-10">
+      <section class="sm:p-2 lg:p-10">
         <!-- title -->
         <div>
-          <h1 class="font-boldFont text-4xl text-textColor">
+          <h1
+            class="font-boldFont text-2xl md:text-3xl lg:text-4xl text-textColor"
+          >
             Lee Alliance Inc
           </h1>
         </div>
 
         <!-- description -->
-        <div class="flex gap-12 mt-10">
+        <div
+          class="flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-12 mt-6 md:mt-8 lg:mt-10"
+        >
           <!-- slider -->
+
           <div class="flex-1 details-page overflow-hidden">
             <!-- Preview Image -->
-            <div class="preview-image">
-              <div class="h-[500px] w-full mb-5">
+            <div class="preview-image mb-4">
+              <div class="h-[250px] md:h-[400px] xl:h-[500px] w-full">
                 <img
-                  class="h-full w-full object-cover rounded-md"
+                  class="h-full w-full object-cover rounded-md cursor-pointer"
                   id="preview"
                   src="https://i.imghippo.com/files/GGU1215USk.png"
                   alt="Preview"
@@ -157,28 +301,28 @@
 
             <!-- Owl Carousel -->
             <div class="owl-carousel overflow-hidden rounded-lg">
-              <div class="size-36 w-full">
+              <div class="carousel-item cursor-pointer aspect-square">
                 <img
                   class="h-full w-full object-cover rounded-md"
                   src="https://i.imghippo.com/files/GGU1215USk.png"
                   alt="Slide 1"
                 />
               </div>
-              <div class="size-36 w-full">
+              <div class="carousel-item cursor-pointer aspect-square">
                 <img
                   class="h-full w-full object-cover rounded-md"
                   src="https://i.postimg.cc/0QnW4sKz/1.png"
                   alt="Slide 2"
                 />
               </div>
-              <div class="size-36 w-full">
+              <div class="carousel-item cursor-pointer aspect-square">
                 <img
                   class="h-full w-full object-cover rounded-md"
                   src="https://i.imghippo.com/files/GGU1215USk.png"
                   alt="Slide 3"
                 />
               </div>
-              <div class="size-36 w-full">
+              <div class="carousel-item cursor-pointer aspect-square">
                 <img
                   class="h-full w-full object-cover rounded-md"
                   src="https://i.postimg.cc/QCn6XJbs/2.png"
@@ -190,7 +334,7 @@
 
           <!-- info -->
           <div class="flex-1">
-            <div class="space-y-4">
+            <div class="space-y-3 md:space-y-4 text-sm md:text-base">
               <!-- review -->
               <div class="flex items-center gap-4">
                 <div class="flex items-center gap-2">
@@ -287,15 +431,17 @@
             </div>
 
             <!-- General info: -->
-            <div class="mt-6">
+            <div class="mt-4 md:mt-6">
               <!-- title -->
-              <h3 class="font-mediumFont text-textColor text-lg">
+              <h3 class="font-mediumFont text-textColor md:text-lg">
                 General info:
               </h3>
 
               <!-- description -->
               <div>
-                <p class="text-textColor font-normalFont tracking-wider mt-1">
+                <p
+                  class="text-textColor text-sm md:text-base font-normalFont tracking-wider mt-1"
+                >
                   Nyka Consulting is a full service business consulting firm. We
                   specialize in QuickBooks set up for small , medium for profit
                   businesses and grant consulting for not-for profits and
@@ -305,14 +451,14 @@
             </div>
 
             <!-- Opening Days -->
-            <div class="mt-6">
+            <div class="mt-4 md:mt-6">
               <!-- title -->
-              <h3 class="font-mediumFont text-textColor text-lg">
+              <h3 class="font-mediumFont text-textColor md:text-lg">
                 Opening days
               </h3>
 
               <!-- description -->
-              <div class="flex gap-5 mt-3">
+              <div class="flex gap-5 mt-3 text-sm md:text-base">
                 <!-- days: -->
                 <div class="font-normalFont tracking-wider space-y-2">
                   <p>Friday:</p>
@@ -337,20 +483,22 @@
         </div>
 
         <!-- Review Section -->
-        <div>
+        <div class="">
           <!-- title -->
-          <div class="my-8">
+          <div class="my-6 lg:my-8">
             <h3
-              class="font-boldFont text-2xl text-textColor py-8 border-y border-dashed border-[#C1C4CC]"
+              class="font-boldFont text-xl md:text-2xl text-textColor py-3 md:py-6 lg:py-8 border-y border-dashed border-[#C1C4CC]"
             >
               Average Reviews
             </h3>
           </div>
 
           <!-- Review display -->
-          <div class="flex gap-8 pb-8 border-b border-dashed border-[#C1C4CC]">
+          <div
+            class="flex flex-col text-sm md:text-base md:flex-row gap-6 md:gap-8 pb-8 border-b border-dashed border-[#C1C4CC]"
+          >
             <div
-              class="px-12 py-8 bg-gradient-to-b from-[#FEEF70] to-[#E99515] flex items-center justify-center rounded-xl flex-col gap-1 flex-shrink-0"
+              class="px-12 py-8 bg-gradient-to-b from-[#FEEF70] to-[#E99515] flex items-center justify-center rounded-xl flex-col gap-1 md:flex-shrink-0"
             >
               <!-- title -->
               <div>
@@ -430,9 +578,9 @@
             </div>
             <div class="flex-1">
               <!-- left side -->
-              <div class="space-y-4">
+              <div class="space-y-3 md:space-y-4">
                 <div
-                  class="font-mediumFont text-textColor flex items-center gap-6"
+                  class="font-mediumFont text-textColor flex items-center gap-4 md:gap-6"
                 >
                   <div class="flex gap-2">
                     <div>
@@ -468,7 +616,9 @@
                   </div>
 
                   <!-- range -->
-                  <div class="w-full bg-[#F6F6F6] relative h-4 rounded-xl">
+                  <div
+                    class="w-full bg-[#F6F6F6] relative h-3 md:h-4 rounded-xl"
+                  >
                     <div
                       style="width: 90%"
                       class="absolute h-full top-0 -left-[1px] bg-gradient-to-b z-10 from-[#FEEF70] to-[#E99515] rounded-xl"
@@ -481,7 +631,7 @@
                   </div>
                 </div>
                 <div
-                  class="font-mediumFont text-textColor flex items-center gap-6"
+                  class="font-mediumFont text-textColor flex items-center gap-4 md:gap-6"
                 >
                   <div class="flex gap-2">
                     <div>
@@ -517,7 +667,9 @@
                   </div>
 
                   <!-- range -->
-                  <div class="w-full bg-[#F6F6F6] relative h-4 rounded-xl">
+                  <div
+                    class="w-full bg-[#F6F6F6] relative h-3 md:h-4 rounded-xl"
+                  >
                     <div
                       style="width: 75%"
                       class="absolute h-full top-0 -left-[1px] bg-gradient-to-b z-10 from-[#FEEF70] to-[#E99515] rounded-xl"
@@ -530,7 +682,7 @@
                   </div>
                 </div>
                 <div
-                  class="font-mediumFont text-textColor flex items-center gap-6"
+                  class="font-mediumFont text-textColor flex items-center gap-4 md:gap-6"
                 >
                   <div class="flex gap-2">
                     <div>
@@ -566,7 +718,9 @@
                   </div>
 
                   <!-- range -->
-                  <div class="w-full bg-[#F6F6F6] relative h-4 rounded-xl">
+                  <div
+                    class="w-full bg-[#F6F6F6] relative h-3 md:h-4 rounded-xl"
+                  >
                     <div
                       style="width: 67%"
                       class="absolute h-full top-0 -left-[1px] bg-gradient-to-b z-10 from-[#FEEF70] to-[#E99515] rounded-xl"
@@ -579,7 +733,7 @@
                   </div>
                 </div>
                 <div
-                  class="font-mediumFont text-textColor flex items-center gap-6"
+                  class="font-mediumFont text-textColor flex items-center gap-4 md:gap-6"
                 >
                   <div class="flex gap-2">
                     <div>
@@ -615,7 +769,9 @@
                   </div>
 
                   <!-- range -->
-                  <div class="w-full bg-[#F6F6F6] relative h-4 rounded-xl">
+                  <div
+                    class="w-full bg-[#F6F6F6] relative h-3 md:h-4 rounded-xl"
+                  >
                     <div
                       style="width: 44%"
                       class="absolute h-full top-0 -left-[1px] bg-gradient-to-b z-10 from-[#FEEF70] to-[#E99515] rounded-xl"
@@ -628,7 +784,7 @@
                   </div>
                 </div>
                 <div
-                  class="font-mediumFont text-textColor flex items-center gap-6"
+                  class="font-mediumFont text-textColor flex items-center gap-4 md:gap-6"
                 >
                   <div class="flex gap-2">
                     <div>
@@ -664,7 +820,9 @@
                   </div>
 
                   <!-- range -->
-                  <div class="w-full bg-[#F6F6F6] relative h-4 rounded-xl">
+                  <div
+                    class="w-full bg-[#F6F6F6] relative h-3 md:h-4 rounded-xl"
+                  >
                     <div
                       style="width: 21%"
                       class="absolute h-full top-0 -left-[1px] bg-gradient-to-b z-10 from-[#FEEF70] to-[#E99515] rounded-xl"
@@ -683,15 +841,18 @@
           <!-- All Reviews -->
           <div>
             <!-- title section-->
-            <div class="my-10 w-full flex items-center justify-between">
-              <h3 class="text-2xl font-boldFont text-textColor">All Reviews</h3>
+            <div
+              class="my-5 md:my-8 lg:my-10 w-full flex items-center justify-between"
+            >
+              <h3 class="text-xl md:text-2xl font-boldFont text-textColor">
+                All Reviews
+              </h3>
 
               <div class="flex items-center gap-2">
-                <p class="font-normalFont tracking-wider">Sort By :</p>
+                <p class="font-normalFont tracking-wider text-xs">Sort By :</p>
                 <div class="details-page-select">
                   <select class="text-sm md:text-base">
-                    <option value="Sort by" disabled selected>Sort by</option>
-                    <option value="New">New</option>
+                    <option value="New" selected>New</option>
                     <option value="Old">Old</option>
                     <option value="Top">Top</option>
                   </select>
@@ -701,12 +862,16 @@
 
             <!-- Reviews -->
 
-            <div class="mt-10 space-y-8">
+            <div
+              class="mt-5 md:mt-8 lg:mt-10 space-y-4 md:space-x-6 lg:space-y-8"
+            >
               <!-- review -->
-              <div class="p-7 rounded-xl bg-[#F5F6F7] border border-[#ECECEC]">
+              <div
+                class="p-4 md:p-5 lg:p-7 rounded-xl bg-[#F5F6F7] border border-[#ECECEC]"
+              >
                 <!-- time -->
                 <div
-                  class="flex items-center gap-6 font-normalFont text-textColor tracking-wider"
+                  class="flex items-center gap-6 font-normalFont text-sm md:text-base text-textColor tracking-wider"
                 >
                   <p>Mar 03, 2023</p>
                   <svg
@@ -722,13 +887,14 @@
                 </div>
 
                 <!-- review description -->
-                <div class="mt-6 py-6 border-y border-dashed border-[#C1C4CC]">
+                <div
+                  class="mt-4 md:mt-6 py-4 md:py-6 border-y border-dashed border-[#C1C4CC]"
+                >
                   <!-- stars -->
                   <div class="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -752,8 +918,7 @@
                     </svg>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -777,8 +942,7 @@
                     </svg>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -802,8 +966,7 @@
                     </svg>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -828,8 +991,7 @@
                     <!-- empty star -->
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 32 33"
                       fill="none"
                     >
@@ -857,8 +1019,10 @@
                   </div>
 
                   <!-- description -->
-                  <div class="mt-5">
-                    <p class="text-textColor font-normalFont tracking-wider">
+                  <div class="mt-3 md:mt-5">
+                    <p
+                      class="text-textColor font-normalFont tracking-wider text-sm md:text-base"
+                    >
                       "I can't thank enough for the incredible courses they
                       offer. I completed the 'Web Development Fundamentals'
                       course, and it not only gave me the skills.”
@@ -867,24 +1031,27 @@
                 </div>
 
                 <!-- user details -->
-                <div class="mt-6 flex items-center gap-4">
-                  <div class="size-16">
+                <div class="mt-4 md:mt-6 flex items-center gap-4">
+                  <div class="size-12 sm:size-14 md:size-16">
                     <img
                       class="w-full h-full object-cover rounded-full"
                       src="https://i.imghippo.com/files/GGU1215USk.png"
                       alt=""
                     />
                   </div>
-                  <h2 class="font-boldFont text-xl text-[#222222]">
+                  <h2 class="font-boldFont md:text-xl text-[#222222]">
                     Esther Howard
                   </h2>
                 </div>
               </div>
+
               <!-- review -->
-              <div class="p-7 rounded-xl bg-[#F5F6F7] border border-[#ECECEC]">
+              <div
+                class="p-4 md:p-5 lg:p-7 rounded-xl bg-[#F5F6F7] border border-[#ECECEC]"
+              >
                 <!-- time -->
                 <div
-                  class="flex items-center gap-6 font-normalFont text-textColor tracking-wider"
+                  class="flex items-center gap-6 font-normalFont text-sm md:text-base text-textColor tracking-wider"
                 >
                   <p>Mar 03, 2023</p>
                   <svg
@@ -900,13 +1067,14 @@
                 </div>
 
                 <!-- review description -->
-                <div class="mt-6 py-6 border-y border-dashed border-[#C1C4CC]">
+                <div
+                  class="mt-4 md:mt-6 py-4 md:py-6 border-y border-dashed border-[#C1C4CC]"
+                >
                   <!-- stars -->
                   <div class="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -930,8 +1098,7 @@
                     </svg>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -955,8 +1122,7 @@
                     </svg>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -980,8 +1146,7 @@
                     </svg>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -1006,8 +1171,7 @@
                     <!-- empty star -->
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 32 33"
                       fill="none"
                     >
@@ -1035,8 +1199,10 @@
                   </div>
 
                   <!-- description -->
-                  <div class="mt-5">
-                    <p class="text-textColor font-normalFont tracking-wider">
+                  <div class="mt-3 md:mt-5">
+                    <p
+                      class="text-textColor font-normalFont tracking-wider text-sm md:text-base"
+                    >
                       "I can't thank enough for the incredible courses they
                       offer. I completed the 'Web Development Fundamentals'
                       course, and it not only gave me the skills.”
@@ -1045,24 +1211,27 @@
                 </div>
 
                 <!-- user details -->
-                <div class="mt-6 flex items-center gap-4">
-                  <div class="size-16">
+                <div class="mt-4 md:mt-6 flex items-center gap-4">
+                  <div class="size-12 sm:size-14 md:size-16">
                     <img
                       class="w-full h-full object-cover rounded-full"
                       src="https://i.imghippo.com/files/GGU1215USk.png"
                       alt=""
                     />
                   </div>
-                  <h2 class="font-boldFont text-xl text-[#222222]">
+                  <h2 class="font-boldFont md:text-xl text-[#222222]">
                     Esther Howard
                   </h2>
                 </div>
               </div>
+
               <!-- review -->
-              <div class="p-7 rounded-xl bg-[#F5F6F7] border border-[#ECECEC]">
+              <div
+                class="p-4 md:p-5 lg:p-7 rounded-xl bg-[#F5F6F7] border border-[#ECECEC]"
+              >
                 <!-- time -->
                 <div
-                  class="flex items-center gap-6 font-normalFont text-textColor tracking-wider"
+                  class="flex items-center gap-6 font-normalFont text-sm md:text-base text-textColor tracking-wider"
                 >
                   <p>Mar 03, 2023</p>
                   <svg
@@ -1078,13 +1247,14 @@
                 </div>
 
                 <!-- review description -->
-                <div class="mt-6 py-6 border-y border-dashed border-[#C1C4CC]">
+                <div
+                  class="mt-4 md:mt-6 py-4 md:py-6 border-y border-dashed border-[#C1C4CC]"
+                >
                   <!-- stars -->
                   <div class="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -1108,8 +1278,7 @@
                     </svg>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -1133,8 +1302,7 @@
                     </svg>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -1158,8 +1326,7 @@
                     </svg>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 24 25"
                       fill="none"
                     >
@@ -1184,8 +1351,7 @@
                     <!-- empty star -->
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
+                      class="size-5 md:size-6"
                       viewBox="0 0 32 33"
                       fill="none"
                     >
@@ -1213,8 +1379,10 @@
                   </div>
 
                   <!-- description -->
-                  <div class="mt-5">
-                    <p class="text-textColor font-normalFont tracking-wider">
+                  <div class="mt-3 md:mt-5">
+                    <p
+                      class="text-textColor font-normalFont tracking-wider text-sm md:text-base"
+                    >
                       "I can't thank enough for the incredible courses they
                       offer. I completed the 'Web Development Fundamentals'
                       course, and it not only gave me the skills.”
@@ -1223,15 +1391,15 @@
                 </div>
 
                 <!-- user details -->
-                <div class="mt-6 flex items-center gap-4">
-                  <div class="size-16">
+                <div class="mt-4 md:mt-6 flex items-center gap-4">
+                  <div class="size-12 sm:size-14 md:size-16">
                     <img
                       class="w-full h-full object-cover rounded-full"
                       src="https://i.imghippo.com/files/GGU1215USk.png"
                       alt=""
                     />
                   </div>
-                  <h2 class="font-boldFont text-xl text-[#222222]">
+                  <h2 class="font-boldFont md:text-xl text-[#222222]">
                     Esther Howard
                   </h2>
                 </div>
@@ -1239,31 +1407,34 @@
             </div>
 
             <!-- see all reviews btn -->
-            <div class="mt-10">
+            <div class="mt-5 md:mt-8 lg:mt-10">
               <button
-                class="px-10 py-3.5 font-mediumFont text-white flex items-center justify-center bg-[#FF4040] rounded-md"
+                class="px-5 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-3.5 font-mediumFont text-white flex items-center justify-center bg-[#FF4040] rounded-md text-sm md:text-base"
               >
                 See All Reviews
               </button>
             </div>
 
             <!-- Write Review -->
-            <div class="mt-12">
+            <div class="mt-5 md:mt-8 lg:mt-12">
               <!-- title -->
               <div>
                 <h4
-                  class="text-2xl font-boldFont text-textColor pb-6 border-[#C1C4CC] border-b border-dashed"
+                  class="text-xl md:text-2xl font-boldFont text-textColor pb-3 md:pb-6 border-[#C1C4CC] border-b border-dashed"
                 >
                   Write a Reviews
                 </h4>
               </div>
 
               <!-- form -->
-              <form action="" class="mt-8 space-y-6">
+              <form
+                action=""
+                class="mt-4 sm:pb-6 md:mt-8 space-y-3 md:space-y-6"
+              >
                 <!-- name -->
                 <div class="space-y-3">
                   <label
-                    class="font-boldFont text-xl text-textColor"
+                    class="font-boldFont md:text-xl text-textColor"
                     for="reviewer-name"
                   >
                     Name
@@ -1271,7 +1442,7 @@
                   <div>
                     <input
                       required
-                      class="rounded-lg font-normalFont tracking-wider placeholder:text-textColor px-6 focus:outline-none w-full py-4 bg-[#F5F6F7] border border-[#E0E0E0]"
+                      class="rounded-lg text-sm md:text-base font-normalFont tracking-wider placeholder:text-textColor px-4 py-2.5 md:px-6 focus:outline-none w-full md:py-4 bg-[#F5F6F7] border border-[#E0E0E0]"
                       type="text"
                       placeholder="Enter Name..."
                       name="reviewer-name"
@@ -1283,7 +1454,7 @@
                 <!-- email -->
                 <div class="space-y-3">
                   <label
-                    class="font-boldFont text-xl text-textColor"
+                    class="font-boldFont md:text-xl text-textColor"
                     for="reviewer-email"
                   >
                     Email
@@ -1291,7 +1462,7 @@
                   <div>
                     <input
                       required
-                      class="rounded-lg font-normalFont tracking-wider placeholder:text-textColor px-6 focus:outline-none w-full py-4 bg-[#F5F6F7] border border-[#E0E0E0]"
+                      class="rounded-lg text-sm md:text-base font-normalFont tracking-wider placeholder:text-textColor px-4 py-2.5 md:px-6 focus:outline-none w-full md:py-4 bg-[#F5F6F7] border border-[#E0E0E0]"
                       type="email"
                       placeholder="Enter Email..."
                       name="reviewer-email"
@@ -1301,9 +1472,9 @@
                 </div>
 
                 <!-- stars -->
-                <div class="space-y-3">
+                <div class="md:space-y-3 space-y-1">
                   <label
-                    class="font-boldFont text-xl text-textColor"
+                    class="font-boldFont md:text-xl text-textColor"
                     for="reviewer-star"
                   >
                     Star Reviews
@@ -1316,10 +1487,8 @@
                       class="hidden"
                     />
                     <svg
-                      class="star group cursor-pointer transition duration-500"
+                      class="star group cursor-pointer transition duration-500 size-6 md:size-7 lg:size-8"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="33"
                       viewBox="0 0 32 33"
                       fill="none"
                       data-index="1"
@@ -1368,10 +1537,8 @@
                       />
                     </svg>
                     <svg
-                      class="star group cursor-pointer transition duration-500"
+                      class="star group cursor-pointer transition duration-500 size-6 md:size-7 lg:size-8"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="33"
                       viewBox="0 0 32 33"
                       fill="none"
                       data-index="2"
@@ -1420,10 +1587,8 @@
                       />
                     </svg>
                     <svg
-                      class="star group cursor-pointer transition duration-500"
+                      class="star group cursor-pointer transition duration-500 size-6 md:size-7 lg:size-8"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="33"
                       viewBox="0 0 32 33"
                       fill="none"
                       data-index="3"
@@ -1472,10 +1637,8 @@
                       />
                     </svg>
                     <svg
-                      class="star group cursor-pointer transition duration-500"
+                      class="star group cursor-pointer transition duration-500 size-6 md:size-7 lg:size-8"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="33"
                       viewBox="0 0 32 33"
                       fill="none"
                       data-index="4"
@@ -1524,10 +1687,8 @@
                       />
                     </svg>
                     <svg
-                      class="star group cursor-pointer transition duration-500"
+                      class="star group cursor-pointer transition duration-500 size-6 md:size-7 lg:size-8"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="33"
                       viewBox="0 0 32 33"
                       fill="none"
                       data-index="5"
@@ -1581,7 +1742,7 @@
                 <!-- message -->
                 <div class="space-y-3">
                   <label
-                    class="font-boldFont text-xl text-textColor"
+                    class="font-boldFont md:text-xl text-textColor"
                     for="reviewer-message"
                   >
                     Write a Reviews
@@ -1589,7 +1750,7 @@
                   <div>
                     <textarea
                       rows="5"
-                      class="rounded-lg font-normalFont tracking-wider placeholder:text-textColor px-6 focus:outline-none w-full py-4 resize-none bg-[#F5F6F7] border border-[#E0E0E0]"
+                      class="rounded-lg text-sm md:text-base font-normalFont tracking-wider placeholder:text-textColor px-6 focus:outline-none w-full py-3 md:py-4 resize-none bg-[#F5F6F7] border border-[#E0E0E0]"
                       placeholder="Write you reviews..."
                       name="reviewer-message"
                       id="reviewer-message"
@@ -1601,7 +1762,7 @@
                 <div>
                   <button
                     type="submit"
-                    class="px-10 py-3.5 font-mediumFont text-white flex items-center justify-center bg-[#FF4040] rounded-md"
+                    class="px-5 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-3.5 font-mediumFont text-white flex items-center justify-center bg-[#FF4040] rounded-md text-sm md:text-base"
                   >
                     Submit Review
                   </button>
@@ -1614,15 +1775,18 @@
     </main>
 
     <!-- footer -->
-    <footer class="w-full bg-[#003333] text-white">
-      <div class="container mx-auto py-16">
-        <div class="w-full flex items-center justify-between">
-          <a href="index.html" class="flex items-center gap-1">
+    <footer
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden"
+    >
+      <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
+        <div
+          class="w-full flex md:items-center justify-between flex-col gap-4 md:gap-6 lg:gap-0 lg:flex-row"
+        >
+          <a href="user-homepage.html" class="flex items-center gap-1">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="51"
-                height="48"
+                class="size-10 md:size-12 lg:size-14"
                 viewBox="0 0 51 48"
                 fill="none"
               >
@@ -1650,7 +1814,7 @@
           </a>
 
           <!-- navLinks -->
-          <div class="text-white flex items-center gap-8">
+          <div class="text-white flex items-center gap-8 text-sm sm:text-base">
             <a href="#">Help & Support</a>
             <a href="#">Privacy policy</a>
             <a href="#">Terms & Conditions</a>
@@ -1660,7 +1824,7 @@
           <div class="flex items-center gap-4">
             <a
               href="#"
-              class="p-3 border block border-[#F8BF2C] rounded-full hover:bg-[#F8BF2C] cursor-pointer group transition duration-300"
+              class="p-2 md:p-3 border block border-[#F8BF2C] rounded-full hover:bg-[#F8BF2C] cursor-pointer group transition duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1678,7 +1842,7 @@
             </a>
             <a
               href="#"
-              class="p-3 border block border-[#F8BF2C] rounded-full hover:bg-[#F8BF2C] cursor-pointer group transition duration-300"
+              class="p-2 md:p-3 border block border-[#F8BF2C] rounded-full hover:bg-[#F8BF2C] cursor-pointer group transition duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1696,7 +1860,7 @@
             </a>
             <a
               href="#"
-              class="p-3 border block border-[#F8BF2C] rounded-full hover:bg-[#F8BF2C] cursor-pointer group transition duration-300"
+              class="p-2 md:p-3 border block border-[#F8BF2C] rounded-full hover:bg-[#F8BF2C] cursor-pointer group transition duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1716,7 +1880,9 @@
         </div>
       </div>
       <!-- footer bottom -->
-      <div class="py-10 text-center border-t border-[#F8BF2C33]">
+      <div
+        class="py-4 md:py-6 lg:py-8 xl:py-10 text-center border-t border-[#F8BF2C33]"
+      >
         <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
