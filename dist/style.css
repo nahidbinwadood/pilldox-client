@@ -1062,6 +1062,10 @@ video {
   gap: 2rem;
 }
 
+.gap-10{
+  gap: 2.5rem;
+}
+
 .space-y-1 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1504,6 +1508,18 @@ video {
 
 .pt-4{
   padding-top: 1rem;
+}
+
+.pb-3{
+  padding-bottom: 0.75rem;
+}
+
+.pb-5{
+  padding-bottom: 1.25rem;
+}
+
+.pb-10{
+  padding-bottom: 2.5rem;
 }
 
 .text-center{
@@ -2013,6 +2029,10 @@ video {
     max-width: 500px;
   }
 
+  .sm\:gap-10{
+    gap: 2.5rem;
+  }
+
   .sm\:px-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -2102,6 +2122,10 @@ video {
     margin-top: 2rem;
   }
 
+  .md\:mt-5{
+    margin-top: 1.25rem;
+  }
+
   .md\:flex{
     display: flex;
   }
@@ -2130,6 +2154,11 @@ video {
     height: 1.25rem;
   }
 
+  .md\:size-28{
+    width: 7rem;
+    height: 7rem;
+  }
+
   .md\:h-\[350px\]{
     height: 350px;
   }
@@ -2144,6 +2173,10 @@ video {
 
   .md\:h-\[calc\(100vh-96px\)\]{
     height: calc(100vh - 96px);
+  }
+
+  .md\:h-\[calc\(100vh-91px\)\]{
+    height: calc(100vh - 91px);
   }
 
   .md\:max-h-\[calc\(100vh-90px\)\]{
@@ -2164,6 +2197,18 @@ video {
 
   .md\:w-\[700px\]{
     width: 700px;
+  }
+
+  .md\:w-2\/5{
+    width: 40%;
+  }
+
+  .md\:w-3\/5{
+    width: 60%;
+  }
+
+  .md\:flex-shrink-0{
+    flex-shrink: 0;
   }
 
   .md\:grid-cols-2{
@@ -2196,6 +2241,14 @@ video {
 
   .md\:gap-8{
     gap: 2rem;
+  }
+
+  .md\:gap-16{
+    gap: 4rem;
+  }
+
+  .md\:gap-12{
+    gap: 3rem;
   }
 
   .md\:space-y-1 > :not([hidden]) ~ :not([hidden]){
@@ -2262,6 +2315,11 @@ video {
     padding-right: 3rem;
   }
 
+  .md\:px-16{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .md\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2302,9 +2360,14 @@ video {
     padding-bottom: 1.5rem;
   }
 
-  .md\:px-16{
-    padding-left: 4rem;
-    padding-right: 4rem;
+  .md\:py-2{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .md\:py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .md\:pb-4{
@@ -2317,6 +2380,18 @@ video {
 
   .md\:pt-16{
     padding-top: 4rem;
+  }
+
+  .md\:pb-5{
+    padding-bottom: 1.25rem;
+  }
+
+  .md\:pb-8{
+    padding-bottom: 2rem;
+  }
+
+  .md\:pb-0{
+    padding-bottom: 0px;
   }
 
   .md\:text-2xl{
@@ -2341,6 +2416,11 @@ video {
 
   .md\:text-xl{
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-lg{
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 }
@@ -2368,9 +2448,18 @@ video {
     margin-top: 2rem;
   }
 
+  .lg\:mt-16{
+    margin-top: 4rem;
+  }
+
   .lg\:size-14{
     width: 3.5rem;
     height: 3.5rem;
+  }
+
+  .lg\:size-32{
+    width: 8rem;
+    height: 8rem;
   }
 
   .lg\:h-\[450px\]{
@@ -2383,6 +2472,14 @@ video {
 
   .lg\:w-\[895px\]{
     width: 895px;
+  }
+
+  .lg\:w-2\/5{
+    width: 40%;
+  }
+
+  .lg\:w-3\/5{
+    width: 60%;
   }
 
   .lg\:grid-cols-3{
@@ -2405,6 +2502,10 @@ video {
     gap: 2rem;
   }
 
+  .lg\:gap-20{
+    gap: 5rem;
+  }
+
   .lg\:space-y-6 > :not([hidden]) ~ :not([hidden]){
     --tw-space-y-reverse: 0;
     margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2425,6 +2526,10 @@ video {
     padding: 1.5rem;
   }
 
+  .lg\:p-7{
+    padding: 1.75rem;
+  }
+
   .lg\:px-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -2438,6 +2543,11 @@ video {
   .lg\:px-16{
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .lg\:px-20{
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .lg\:px-8{
@@ -2465,13 +2575,12 @@ video {
     padding-bottom: 2rem;
   }
 
-  .lg\:px-20{
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-
   .lg\:pt-20{
     padding-top: 5rem;
+  }
+
+  .lg\:pb-8{
+    padding-bottom: 2rem;
   }
 
   .lg\:text-4xl{
@@ -2502,6 +2611,10 @@ video {
 
   .xl\:max-w-\[950px\]{
     max-width: 950px;
+  }
+
+  .xl\:max-w-\[1200px\]{
+    max-width: 1200px;
   }
 
   .xl\:px-24{
