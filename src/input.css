@@ -59,10 +59,70 @@
 .business-specialty-select .list {
   @apply w-full !text-sm;
 }
+.set-operation-select {
+  @apply border-b border-[#6A6A6A] border-t-0 border-x-0 rounded-none !w-32  px-4 bg-transparent;
+}
+.set-operation-select .list {
+  @apply w-full max-h-[200px] overflow-y-auto;
+}
+.set-operation-select .list::-webkit-scrollbar {
+  @apply w-2 bg-primary;
+}
+.set-operation-select .list::-webkit-scrollbar-thumb {
+  @apply bg-[#F8BF2C] rounded-sm;
+}
+.set-operation-select .list::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
+.accordion-content .nice-select::after {
+  @apply hidden;
+}
 
 .details-page .owl-carousel .owl-nav {
   @apply hidden;
 }
 .details-page .owl-carousel .owl-item {
   @apply rounded-md;
+}
+.toggle-container {
+  @apply flex items-center;
+}
+
+.toggle-switch {
+  @apply hidden;
+}
+
+.toggle-label {
+  @apply block relative w-9 h-6 bg-transparent border-2 border-[#6A6A6A] rounded cursor-pointer transition-colors duration-300 ease-in-out;
+}
+
+.toggle-label .toggle-button {
+  @apply absolute content-[''] size-3 top-1/2 left-1 -translate-y-1/2 bg-[#6A6A6A] rounded transition-transform duration-300 ease-in-out;
+}
+
+.toggle-switch:checked + .toggle-label {
+  @apply border-primary;
+}
+
+.toggle-switch:checked + .toggle-label .toggle-button {
+  @apply translate-x-3 bg-primary;
+}
+
+/* accordion */
+.accordion-section,
+.accordion-header,
+.accordion-content {
+  transition: transform 0.5s ease;
+}
+
+.accordion-header {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0px;
+  padding: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }

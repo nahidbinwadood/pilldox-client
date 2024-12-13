@@ -5,6 +5,7 @@ $(document).ready(function () {
   $('.accordion-body-address').niceSelect();
   $('.details-page-select').niceSelect();
   $('.business-specialty-select').niceSelect();
+  $('.set-operation-select').niceSelect();
 
   // hideButton:
   const hidePasswordButton = document.querySelector('.hidePass');
@@ -58,8 +59,8 @@ $(document).ready(function () {
   // Close the dropdown if clicked outside of it
   document.addEventListener('click', (e) => {
     if (
-      !navbarDropDown.contains(e.target) &&
-      !navbarDropDownBtn.contains(e.target)
+      !navbarDropDown?.contains(e.target) &&
+      !navbarDropDownBtn?.contains(e.target)
     ) {
       navbarDropDown?.classList.remove('opacity-100', 'z-10', 'translate-y-5');
       navbarDropDown?.classList.add('opacity-0', '-z-10', 'translate-y-7');
@@ -416,10 +417,75 @@ $(document).ready(function () {
   });
 
   document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !openMenu.contains(e.target)) {
-      openMenu.classList.remove('hidden');
-      closeMenu.classList.add('hidden');
-      sidebar.classList.add('-translate-x-full');
+    if (!sidebar?.contains(e.target) && !openMenu?.contains(e.target)) {
+      openMenu?.classList.remove('hidden');
+      closeMenu?.classList.add('hidden');
+      sidebar?.classList.add('-translate-x-full');
     }
+  });
+
+  //business file upload:
+
+  const fileInput = document.getElementById('businessPhoto');
+  const previewContainer = document.getElementById('prev-business-documents');
+
+  fileInput?.addEventListener('change', () => {
+    Array.from(fileInput.files).forEach((file) => {
+      const filePreview = document.createElement('div');
+      filePreview.className =
+        'flex items-center justify-between p-2 bg-white rounded-lg shadow-md w-full max-w-sm';
+
+      // File name and extension
+      const fileInfo = document.createElement('span');
+      fileInfo.textContent = `${file.name}`;
+      fileInfo.className = 'text-sm font-medium';
+
+      // Close button
+      const closeButton = document.createElement('button');
+      closeButton.textContent = '✕';
+      closeButton.className =
+        'text-sm text-red-500 ml-4 hover:text-red-700 focus:outline-none';
+
+      closeButton.addEventListener('click', () => {
+        previewContainer.removeChild(filePreview);
+      });
+
+      // Append to preview container
+      filePreview.appendChild(fileInfo);
+      filePreview.appendChild(closeButton);
+      previewContainer.appendChild(filePreview);
+    });
+
+    // Clear input for allowing duplicate file uploads
+    fileInput.value = '';
+  });
+
+  // accordion::
+  const headers = document.querySelectorAll('.accordion-header');
+
+  // Add click event listeners to all headers
+  headers.forEach((header) => {
+    header.addEventListener('click', function () {
+      const section = this.closest('.accordion-section');
+      const content = section.querySelector('.accordion-content');
+      const dropdownArrow = this.querySelector('.dropdown--arrow');
+      // Toggle current accordion
+      if (content.style.maxHeight) {
+        // Close current accordion
+        content.style.maxHeight = null;
+        content.style.padding = '0px';
+        section.classList.remove('active');
+        section.classList.add('active');
+        content.style.opacity = 0;
+        dropdownArrow.style.transform = 'rotate(0deg)';
+      } else {
+        // Open current accordion
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.style.padding = '16px 0';
+        content.style.opacity = 100;
+        section.classList.add('active');
+        dropdownArrow.style.transform = 'rotate(180deg)';
+      }
+    });
   });
 });
