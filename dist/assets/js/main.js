@@ -4,6 +4,7 @@ $(document).ready(function () {
   $('.hero-banner-select').niceSelect();
   $('.accordion-body-address').niceSelect();
   $('.details-page-select').niceSelect();
+  $('.business-specialty-select').niceSelect();
 
   // hideButton:
   const hidePasswordButton = document.querySelector('.hidePass');

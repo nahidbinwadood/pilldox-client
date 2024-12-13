@@ -50,6 +50,16 @@
   @apply w-full;
 }
 
+.business-specialty-select {
+  @apply w-full px-4 bg-[#E5E5E5] !mb-5 h-[52px] leading-[52px] text-[#2E2E2E] text-sm;
+}
+.nice-select::after {
+  right: 20px;
+}
+.business-specialty-select .list {
+  @apply w-full !text-sm;
+}
+
 .details-page .owl-carousel .owl-nav {
   @apply hidden;
 }

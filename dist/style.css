@@ -888,6 +888,10 @@ video {
   width: 50%;
 }
 
+.w-2\/3{
+  width: 66.666667%;
+}
+
 .w-32{
   width: 8rem;
 }
@@ -1276,28 +1280,12 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 0\.50\)\2c rgba\(0\2c 0\2c 0\2c 0\.5\)\)\2c url\(\'https\:\/\/i\.postimg\.cc\/fWGkxGdH\/homebg\.jpg\'\)\]{
-  background-image: linear-gradient(0deg,rgba(0,0,0,0.50),rgba(0,0,0,0.5)),url('https://i.postimg.cc/fWGkxGdH/homebg.jpg');
+.bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 0\.50\)\2c rgba\(0\2c 0\2c 0\2c 0\.5\)\)\2c url\(\'\.\/assets\/images\/homebg\.jpg\'\)\]{
+  background-image: linear-gradient(0deg,rgba(0,0,0,0.50),rgba(0,0,0,0.5)),url('./assets/images/homebg.jpg');
 }
 
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-}
-
-.bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 0\.50\)\2c rgba\(0\2c 0\2c 0\2c 0\.5\)\)\2c url\(\'\.\/assets\/\'\)\]{
-  background-image: linear-gradient(0deg,rgba(0,0,0,0.50),rgba(0,0,0,0.5)),url('./assets/');
-}
-
-.bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 0\.50\)\2c rgba\(0\2c 0\2c 0\2c 0\.5\)\)\2c url\(\'\.\/assets\/images\/\'\)\]{
-  background-image: linear-gradient(0deg,rgba(0,0,0,0.50),rgba(0,0,0,0.5)),url('./assets/images/');
-}
-
-.bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 0\.50\)\2c rgba\(0\2c 0\2c 0\2c 0\.5\)\)\2c url\(\'\.\/assets\/images\/community-bg\.png\'\)\]{
-  background-image: linear-gradient(0deg,rgba(0,0,0,0.50),rgba(0,0,0,0.5)),url('./assets/images/community-bg.png');
-}
-
-.bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 0\.50\)\2c rgba\(0\2c 0\2c 0\2c 0\.5\)\)\2c url\(\'\.\/assets\/images\/homebg\.jpg\'\)\]{
-  background-image: linear-gradient(0deg,rgba(0,0,0,0.50),rgba(0,0,0,0.5)),url('./assets/images/homebg.jpg');
 }
 
 .from-\[\#FEEF70\]{
@@ -1851,6 +1839,31 @@ video {
 
 .details-page-select .list{
   width: 100%;
+}
+
+.business-specialty-select{
+  margin-bottom: 1.25rem !important;
+  height: 52px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity, 1));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  line-height: 52px;
+  --tw-text-opacity: 1;
+  color: rgb(46 46 46 / var(--tw-text-opacity, 1));
+}
+
+.nice-select::after {
+  right: 20px;
+}
+
+.business-specialty-select .list{
+  width: 100%;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
 }
 
 .details-page .owl-carousel .owl-nav{
