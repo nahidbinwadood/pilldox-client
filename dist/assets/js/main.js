@@ -188,12 +188,23 @@ $(document).ready(function () {
   const addIntroBtn = document.querySelector(
     '.update-information-add-intro-btn'
   );
+  const updateOpeningDaysBtn = document.querySelector(
+    '.update-opening-days-btn'
+  );
+
   const aboutYouModal = document.getElementById('about-you-modal');
+  const openingDaysModal = document.getElementById('opening-days-modal');
   const aboutYouModalContainer = document.getElementById(
     'about-you-modal-container'
   );
+  const openingDaysModalContainer = document.getElementById(
+    'opening-days-modal-container'
+  );
   const aboutYouModalOverlay = document.getElementById(
     'about-you-modal-overlay'
+  );
+  const openingDaysModalOverlay = document.getElementById(
+    'opening-days-modal-overlay'
   );
 
   addIntroBtn?.addEventListener('click', () => {
@@ -212,6 +223,13 @@ $(document).ready(function () {
     ) {
       hideUpdateIntroModal();
     }
+
+    if (
+      openingDaysModalContainer?.contains(e.target) &&
+      !openingDaysModal.contains(e.target)
+    ) {
+      hideOpeningModal();
+    }
   });
 
   function hideUpdateIntroModal() {
@@ -219,7 +237,7 @@ $(document).ready(function () {
     aboutYouModal.classList.add('opacity-0', 'scale-95');
     aboutYouModalContainer.classList.add('opacity-0');
     aboutYouModalOverlay.classList.add('opacity-0');
-
+    document.body.style.overflow = 'auto';
     // Use setTimeout to allow transition to complete before adding hidden class
 
     aboutYouModalOverlay.classList.add('hidden');
@@ -233,7 +251,7 @@ $(document).ready(function () {
     aboutYouModalOverlay.classList.remove('hidden');
     aboutYouModalContainer.classList.remove('hidden');
     aboutYouModal.classList.remove('hidden');
-
+    document.body.style.overflow = 'hidden';
     // Trigger reflow to ensure transition works
     void aboutYouModalContainer.offsetWidth;
 
@@ -244,6 +262,45 @@ $(document).ready(function () {
     aboutYouModalOverlay.classList.remove('opacity-0');
     aboutYouModalContainer.classList.remove('opacity-0');
     aboutYouModal.classList.remove('opacity-0', 'scale-95');
+  }
+
+  updateOpeningDaysBtn?.addEventListener('click', () => {
+    if (openingDaysModal && openingDaysModalOverlay) {
+      showOpeningModal();
+    } else {
+      hideOpeningModal();
+    }
+  });
+  function showOpeningModal() {
+    // Remove hidden classes first
+    openingDaysModalOverlay.classList.remove('hidden');
+    openingDaysModalContainer.classList.remove('hidden');
+    openingDaysModal.classList.remove('hidden');
+
+    document.body.style.overflow = 'hidden';
+    // Trigger reflow to ensure transition works
+    void openingDaysModalContainer.offsetWidth;
+
+    // Add flex and transitions
+    openingDaysModalContainer.classList.add('flex');
+
+    // Add fade-in and scale-up transitions
+    openingDaysModalOverlay.classList.remove('opacity-0');
+    openingDaysModalContainer.classList.remove('opacity-0');
+    openingDaysModal.classList.remove('opacity-0', 'scale-95');
+  }
+  function hideOpeningModal() {
+    // Add fade-out and scale-down transitions
+    openingDaysModal.classList.add('opacity-0', 'scale-95');
+    openingDaysModalContainer.classList.add('opacity-0');
+    openingDaysModalOverlay.classList.add('opacity-0');
+    document.body.style.overflow = 'auto';
+    // Use setTimeout to allow transition to complete before adding hidden class
+
+    openingDaysModalOverlay.classList.add('hidden');
+    openingDaysModalContainer.classList.remove('flex');
+    openingDaysModalContainer.classList.add('hidden');
+    openingDaysModal.classList.add('hidden');
   }
 
   //review ::start

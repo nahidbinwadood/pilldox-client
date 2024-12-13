@@ -65,13 +65,16 @@
 .set-operation-select .list {
   @apply w-full max-h-[200px] overflow-y-auto;
 }
-.set-operation-select .list::-webkit-scrollbar {
+.set-operation-select .list::-webkit-scrollbar,
+#opening-days-modal::-webkit-scrollbar {
   @apply w-2 bg-primary;
 }
-.set-operation-select .list::-webkit-scrollbar-thumb {
+.set-operation-select .list::-webkit-scrollbar-thumb,
+#opening-days-modal::-webkit-scrollbar-thumb {
   @apply bg-[#F8BF2C] rounded-sm;
 }
-.set-operation-select .list::-webkit-scrollbar-thumb:hover {
+.set-operation-select .list::-webkit-scrollbar-thumb:hover,
+#opening-days-modal::-webkit-scrollbar-thumb:hover {
   @apply bg-primary;
 }
 .accordion-content .nice-select::after {
