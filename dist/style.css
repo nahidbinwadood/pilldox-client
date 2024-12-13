@@ -1881,7 +1881,7 @@ video {
   color: rgb(46 46 46 / var(--tw-text-opacity, 1));
 }
 
-.nice-select::after {
+.business-specialty-select .nice-select::after {
   right: 20px;
 }
 

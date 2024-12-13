@@ -8,7 +8,7 @@
       href="../dist/assets/images/logo.svg"
       type="image/x-icon"
     />
-    <title>Pilldox Client | Login</title>
+    <title>Pilldox Client | Verify Email</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -59,7 +59,9 @@
         class="mx-5 md:px-8 2xl:mx-0 w-full sm:max-w-[500px] sm:min-w-[500px] p-4 md:p-6 rounded-lg md:rounded-l-xl lg:rounded-2xl shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)]"
       >
         <div>
-          <h2 class="font-boldFont text-2xl md:text-3xl py-2 text-center">Welcome</h2>
+          <h2 class="font-boldFont text-2xl md:text-3xl py-2 text-center">
+            Forgot Password
+          </h2>
         </div>
 
         <div class="mt-4">
@@ -70,6 +72,16 @@
                 class="w-full py-4 px-6 rounded-md bg-[#E5E5E5] text-sm font-poppins focus:outline-none text-[#2E2E2E] placeholder:text-[#2E2E2E]"
                 placeholder="Email Address"
                 type="email"
+                name="email"
+                id="email"
+              />
+            </div>
+            <div>
+              <input
+                required
+                class="w-full py-4 px-6 rounded-md bg-[#E5E5E5] text-sm font-poppins focus:outline-none text-[#2E2E2E] placeholder:text-[#2E2E2E]"
+                placeholder="Enter Code "
+                type="text"
                 name="email"
                 id="email"
               />
@@ -129,47 +141,16 @@
               </div>
             </div>
 
-            <!-- forgot password -->
-            <div class="w-full">
-              <a
-                href="forgot-password.html"
-                class="text-center font-poppins font-semibold text-sm underline w-full mx-auto block"
-                >Forgot password?</a
-              >
-            </div>
-
             <!-- submit -->
             <div class="w-full">
-              <button
-                class="font-semibold text-center bg-primary py-2.5 md:py-4 text-white w-full rounded-md font-poppins"
+              <a
+                href="user-homepage.html"
+                class="font-semibold text-center bg-primary py-2.5 md:py-4 text-white w-full rounded-md font-poppins flex items-center justify-center"
               >
-                Log In
-              </button>
-            </div>
-
-            <div>
-              <p class="font-poppins text-sm text-[#2E2E2E]">
-                By signing up, you agree to our
-                <a href="#" class="underline">Privacy Policy</a>,
-                <a href="#" class="underline">Cookie Policy</a>, and
-                <a href="#" class="underline">Member Agreement.</a>
-              </p>
+                Confirm
+              </a>
             </div>
           </form>
-        </div>
-      </section>
-
-      <section
-        class="mt-4 md:mt-6 w-full font-poppins p-4 md:p-6 rounded-lg md:rounded-l-xl lg:rounded-2xl shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)] sm:max-w-[500px] sm:min-w-[500px]"
-      >
-        <div class="w-full text-center text-sm md:text-base">
-          <p>
-            New here?
-            <a href="signup.html" class="font-semibold underline"
-              >Join Connect</a
-            >
-            now.
-          </p>
         </div>
       </section>
     </main>
