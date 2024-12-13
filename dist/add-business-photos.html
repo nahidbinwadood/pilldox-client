@@ -8,7 +8,7 @@
       href="../dist/assets/images/logo.svg"
       type="image/x-icon"
     />
-    <title>Pilldox Client | Add Business Information</title>
+    <title>Pilldox Client | Add Business Photos</title>
     <link rel="stylesheet" href="./assets/css/nice-select.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -63,7 +63,7 @@
           <h2
             class="font-boldFont text-2xl md:text-3xl py-2 text-center text-[#222222] lg:w-2/3 mx-auto"
           >
-            Add Your Business Information
+            Add photos of your Business
           </h2>
         </div>
 
@@ -71,87 +71,6 @@
           <form action="" class="space-y-3 md:space-y-5">
             <!-- form inputs -->
             <div class="space-y-4">
-              <div class="w-full">
-                <input
-                  required
-                  class="w-full py-4 px-6 rounded-md bg-[#E5E5E5] text-sm font-poppins focus:outline-none text-[#2E2E2E] placeholder:text-[#2E2E2E]"
-                  placeholder="Business Name"
-                  type="text"
-                  name="businessName"
-                  id="businessName"
-                />
-              </div>
-              <div class="business-specialty-select w-full">
-                <select class="text-sm md:text-base">
-                  <option value="All Categories" disabled selected>
-                    All Categories
-                  </option>
-                  <option value="Professional">Professional</option>
-                  <option value="Business">Business</option>
-                </select>
-              </div>
-              <div class="w-full">
-                <input
-                  required
-                  class="w-full py-4 px-6 rounded-md bg-[#E5E5E5] text-sm font-poppins focus:outline-none text-[#2E2E2E] placeholder:text-[#2E2E2E]"
-                  placeholder="Business Website URL"
-                  type="text"
-                  name="businessUrl"
-                  id="businessUrl"
-                />
-              </div>
-              <div class="w-full">
-                <input
-                  required
-                  class="w-full py-4 px-6 rounded-md bg-[#E5E5E5] text-sm font-poppins focus:outline-none text-[#2E2E2E] placeholder:text-[#2E2E2E]"
-                  placeholder="Business(Street Address)"
-                  type="text"
-                  name="businessNameStreetAddress"
-                  id="businessNameStreetAddress"
-                />
-              </div>
-              <div class="w-full flex flex-col md:flex-row items-center gap-4">
-                <div class="w-full">
-                  <input
-                    required
-                    class="w-full py-4 px-6 rounded-md bg-[#E5E5E5] text-sm font-poppins focus:outline-none text-[#2E2E2E] placeholder:text-[#2E2E2E]"
-                    placeholder="City"
-                    type="text"
-                    name="city"
-                    id="city"
-                  />
-                </div>
-                <div class="w-full">
-                  <input
-                    required
-                    class="w-full py-4 px-6 rounded-md bg-[#E5E5E5] text-sm font-poppins focus:outline-none text-[#2E2E2E] placeholder:text-[#2E2E2E]"
-                    placeholder="State"
-                    type="text"
-                    name="state"
-                    id="state"
-                  />
-                </div>
-                <div class="w-full">
-                  <input
-                    required
-                    class="w-full py-4 px-6 rounded-md bg-[#E5E5E5] text-sm font-poppins focus:outline-none text-[#2E2E2E] placeholder:text-[#2E2E2E]"
-                    placeholder="Zip"
-                    type="text"
-                    name="zip"
-                    id="zip"
-                  />
-                </div>
-              </div>
-              <div class="w-full">
-                <input
-                  required
-                  class="w-full py-4 px-6 rounded-md bg-[#E5E5E5] text-sm font-poppins focus:outline-none text-[#2E2E2E] placeholder:text-[#2E2E2E]"
-                  placeholder="License Number(If any)"
-                  type="number"
-                  name="licenseNumber"
-                  id="licenseNumber"
-                />
-              </div>
               <div class="w-full">
                 <div
                   class="border-2 overflow-hidden border-dashed border-primary px-6 py-8 rounded-lg bg-[#E5E5E5] relative"
@@ -210,7 +129,9 @@
                   </div>
                 </div>
                 <div>
-                    <p class="mt-4 text-[#2E2E2E] text-xs md:text-sm text-center">Please upload your business documents to continue</p>
+                  <p class="mt-4 text-[#2E2E2E] text-xs md:text-sm text-center">
+                    Please upload your business documents to continue
+                  </p>
                 </div>
               </div>
             </div>
@@ -218,7 +139,14 @@
             <!-- submit -->
             <div class="w-full">
               <a
-                href="set-operation-hours.html"
+                href="submit-verification.html"
+                class="font-semibold inline-block text-center bg-[#E0E0E0] py-3 md:py-4 text-textColor w-full rounded-lg font-poppins"
+                >Skip</a
+              >
+            </div>
+            <div class="w-full">
+              <a
+                href="submit-verification.html"
                 class="font-semibold inline-block text-center bg-primary py-3 md:py-4 text-white w-full rounded-lg font-poppins"
                 >Continue</a
               >
